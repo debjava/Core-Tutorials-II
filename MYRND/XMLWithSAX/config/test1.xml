@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web>
+	<s id="hello_servlet_id">
+		<name>hello </name>
+		<class>Hello </class>
+	</s>
+</web>

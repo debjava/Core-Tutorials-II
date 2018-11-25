@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jboss>
+  <enterprise-beans>
+    <session>
+      <ejb-name>Stateless Session Bean in EJB 3.0</ejb-name>
+      <jndi-name>statelessCalc/STATELESSCALC</jndi-name>
+    </session>
+  </enterprise-beans>
+</jboss>
+

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jboss>
+    
+    <enterprise-beans>
+        
+        <entity>
+	    	<ejb-name>CDBean</ejb-name>
+	    	<jndi-name>cd/CD</jndi-name>
+	    	<configuration-name></configuration-name>
+        </entity>
+    </enterprise-beans>
+</jboss>
+

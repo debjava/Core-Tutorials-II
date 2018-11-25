@@ -1,0 +1,11 @@
+public class BusinessObject {
+  private int numericValue;
+  public void setNumericValue(int newNumericValue) {
+    numericValue = newNumericValue;
+  }
+  public int getNumericValue() {
+    return numericValue;
+  }
+}
+
+

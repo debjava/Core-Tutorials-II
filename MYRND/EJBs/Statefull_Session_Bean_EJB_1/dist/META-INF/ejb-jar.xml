@@ -1,0 +1,16 @@
+<!DOCTYPE ejb-jar PUBLIC '-//Sun Microsystems, Inc.//DTD Enterprise JavaBeans 1.1//EN' 'http://java.sun.com/j2ee/dtds/ejb-jar_1_1.dtd'>
+<ejb-jar>
+     <description>Statefull session bean EJB application for PATU</description>
+     <display-name>PATU specific EJB</display-name>
+     <enterprise-beans>
+       <session>
+         <ejb-name>PATU EJB</ejb-name>
+         <home>com.dds.core.statefull.session.ejb.SayMyNameHome</home>
+         <remote>com.dds.core.statefull.session.ejb.SayMyName</remote>
+         <ejb-class>com.dds.core.statefull.session.ejb.SayMyNameBean</ejb-class>
+         <session-type>Stateful</session-type>
+         <transaction-type>Bean</transaction-type>
+       </session>
+     </enterprise-beans>
+</ejb-jar>
+

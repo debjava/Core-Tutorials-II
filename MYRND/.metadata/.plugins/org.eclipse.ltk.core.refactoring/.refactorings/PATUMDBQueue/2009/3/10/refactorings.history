@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 3 elements(s) to &apos;MDBUsingTopicEJB2.0&apos;&#x0D;&#x0A;- Original project: &apos;PATUMDBQueue&apos;&#x0D;&#x0A;- Destination element: &apos;MDBUsingTopicEJB2.0&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     build.xml&#x0D;&#x0A;     META-INF&#x0D;&#x0A;     lib" description="Copy elements" destination="=MDBUsingTopicEJB2.0" element1="build.xml" element2="META-INF" element3="lib" files="1" flags="589830" folders="2" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1235928488671" units="0" version="1.0"/>
+</session>

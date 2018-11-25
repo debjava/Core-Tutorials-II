@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename local variable &apos;e&apos; in &apos;Client.sendMessage()&apos; to &apos;ie&apos;&#x0D;&#x0A;- Original project: &apos;SocketProj&apos;&#x0D;&#x0A;- Original element: &apos;Client.sendMessage().e&apos;&#x0D;&#x0A;- Renamed element: &apos;e&apos;&#x0D;&#x0A;- Update references to refactored element" description="Rename local variable &apos;e&apos;" id="org.eclipse.jdt.ui.rename.local.variable" input="/src&lt;{Client.java[Client~sendMessage@e!577!589!589!589!QIOException;" name="ie" references="true" stamp="1244124588518" version="1.0"/>
+</session>

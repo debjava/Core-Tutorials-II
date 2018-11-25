@@ -1,0 +1,82 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html><head><!--
+
+  @(#)package.html	1.60 98/01/27
+
+  Copyright 1998 Sun Microsystems, Inc. 901 San Antonio Road, 
+  Palo Alto, California, 94303, U.S.A.  All Rights Reserved.
+
+  This software is the confidential and proprietary information of Sun
+  Microsystems, Inc. ("Confidential Information").  You shall not
+  disclose such Confidential Information and shall use it only in
+  accordance with the terms of the license agreement you entered into
+  with Sun.
+
+  CopyrightVersion 1.2
+
+--></head>
+
+<body bgcolor="white">
+
+This document is the API specification for the Annotation based constraints 
+framework.
+
+<p>
+This framework provides the capability to use Annotations to add validity
+constraints to JavaBeans properties and the classes to gain access to these
+constraints programatically. Additionally there are classes to perform validation
+of properties and JavaBean instances according to these constraints. 
+</p>
+<p>
+The following code snippet illustrates the core concept behind this framework.
+It shows two Annotations added to a property to constrain the legal values for
+that property. The example shows part of an Address class with a single property
+called street. On the setter method are two constraint annotations, 
+({@link com.sun.aus.constraints.annotation.MinLength MinLength} and 
+{@link com.sun.aus.constraints.annotation.MaxLength MaxLength}), which together
+have the effect of constraining the length of the street property to between 10 
+and 20 characters, in order for the street to be valid.
+<pre>
+<code>
+ public class Address {
+   private String street;
+
+   public String getStreet() {
+     return street;
+   }
+
+   <strong>{@literal @MinLength(10)}
+   {@literal @MaxLength(20)}</strong>
+   public void setStreet(String street) {
+     this.street = street;
+  }
+}
+</code>
+</pre>
+
+Further examples are supplied in a <a href="{@docRoot}/resources/Samples.txt">sample file</a>
+</p>
+<p>
+The constraints themselves and classes involved in dealing directly with
+the constraints are defined in the 
+<a href="com/sun/aus/constraints/annotation/package-summary.html">annotation</a> package. 
+</p>
+<p>
+An additional package 
+<a href="com/sun/aus/constraints/validation/package-summary.html">validation</a>
+is provided for validation. This is not an essential part
+of the framework. Validation may be done independently of this package. For
+example it could be handled by another frameworks such as JSF, JAXB etc.
+</p>
+
+<h2>Related Documentation</h2>
+
+For overviews, tutorials, examples, guides, and tool documentation, please see:
+<ul>
+  <li><a href="http://java.sun.com/developer/technicalArticles/J2SE/constraints/annotations.html" 
+        target="article">The java.sun.com article that introduced the framework</a>
+</li></ul>
+
+<!-- Put @see and @since tags down here. -->
+
+</body></html>

@@ -1,0 +1,40 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html><head><!--
+
+  @(#)package.html	1.60 98/01/27
+
+  Copyright 1998 Sun Microsystems, Inc. 901 San Antonio Road, 
+  Palo Alto, California, 94303, U.S.A.  All Rights Reserved.
+
+  This software is the confidential and proprietary information of Sun
+  Microsystems, Inc. ("Confidential Information").  You shall not
+  disclose such Confidential Information and shall use it only in
+  accordance with the terms of the license agreement you entered into
+  with Sun.
+
+  CopyrightVersion 1.2
+
+--></head>
+
+<body bgcolor="white">
+
+Provides optional validation services for the annotation based constraints 
+framework.
+<p>
+The following diagram shows an overview of this package.
+<br/>
+<img src="{@docRoot}/resources/validationOverview.gif" align="center" border="1" vspace="20"/>
+<br/>
+The key class in this package is 
+{@link com.sun.aus.constraints.validation.ValidatableObject ValidatableObject},
+which provides the validation services for the framework. Individual constraints
+are validated via implementations of the
+{@link com.sun.aus.constraints.validation.ConstraintValidator ConstraintValidator}
+interface.
+These constraint validators are registered (for the constraint types that they will
+validate) in the
+{@link com.sun.aus.constraints.validation.ValidatorFactory ValidatorFactory}.
+
+<!-- Put @see and @since tags down here. -->
+
+</body></html>

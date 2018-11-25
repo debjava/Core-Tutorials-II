@@ -1,0 +1,35 @@
+<project name="PATU SPLIT MDB" default="deploy">
+
+    <property name="sourcedir"		value="${basedir}/src"/>
+    <property name="targetdir"		value="${basedir}/bin"/>
+    <property name="librarydir"		value="${basedir}/lib"/>
+    <property name="distdir"		value="${basedir}/dist"/>
+    <!-- Change the path of your Jboss -->
+	<property name="deploy.dir"		value="C:/devsetup/jboss-4.2.3.GA/server/default/deploy"/>
+
+    <path id="libraries">
+        <fileset dir="${librarydir}">
+            <include name="*.jar"/>
+        </fileset>
+    </path>
+
+    <target name="clean">
+        <delete dir="${distdir}"/>
+        <mkdir dir="${distdir}"/>
+    </target>
+
+    <target name="compile" depends="clean">
+      <javac srcdir="${sourcedir}"
+             destdir="${distdir}"
+             classpathref="libraries"/>
+    </target>
+
+	<target name="createJar" description="To create a jar file" depends="compile">
+		<jar jarfile="${distdir}/mdbejb30.jar"	basedir="${distdir}" />
+	</target>
+
+	<target name="deploy" description="Deploying to JBOSS" depends="createJar">
+		<copy file="${distdir}/mdbejb30.jar" todir="${deploy.dir}"/>
+	</target>
+
+</project>

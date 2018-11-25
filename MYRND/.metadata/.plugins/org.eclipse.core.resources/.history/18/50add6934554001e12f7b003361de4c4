@@ -1,0 +1,8 @@
+
+public class Worker 
+{
+	public void doWork()
+	{
+		
+	}
+}

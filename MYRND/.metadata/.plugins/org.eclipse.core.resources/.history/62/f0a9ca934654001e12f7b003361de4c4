@@ -1,0 +1,8 @@
+
+public class DeadThread1 implements Runnable 
+{
+	public void run() 
+	{
+		
+	}
+}

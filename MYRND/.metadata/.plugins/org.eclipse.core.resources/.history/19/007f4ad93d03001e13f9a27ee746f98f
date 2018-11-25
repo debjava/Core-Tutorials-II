@@ -1,0 +1,8 @@
+package com.dds.core.statefull.session.ejb;
+
+public interface SayMyName extends EJBObject 
+{	 	
+   public String getMyName() throws RemoteException;
+   public int getCount() throws RemoteException;   
+   public void setMyName(String nameIn) throws RemoteException;
+}

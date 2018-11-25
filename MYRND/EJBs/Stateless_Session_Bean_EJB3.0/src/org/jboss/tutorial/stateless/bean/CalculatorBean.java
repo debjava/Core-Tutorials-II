@@ -1,0 +1,19 @@
+package org.jboss.tutorial.stateless.bean;
+
+import javax.ejb.Stateless;
+
+@Stateless
+public class CalculatorBean implements CalculatorRemote, CalculatorLocal
+{
+   public int add(int x, int y)
+   {
+	   System.out.println("Addition of two number for stateless session bean");
+      return x + y;
+   }
+
+   public int subtract(int x, int y)
+   {
+	   System.out.println("subtraction of two number for stateless session bean");
+      return x - y;
+   }
+}

@@ -1,0 +1,8 @@
+
+public class TestDeadLock 
+{
+	public static void main(String[] args) 
+	{
+		Worker worker1 = new Worker( "W1" );
+	}
+}

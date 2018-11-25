@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="test"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="lib/ejb-3_0-api.jar"/>
+	<classpathentry kind="lib" path="lib/jboss-client.jar"/>
+	<classpathentry kind="lib" path="lib/jbosssx-client.jar"/>
+	<classpathentry kind="lib" path="lib/jnp-client.jar"/>
+	<classpathentry kind="lib" path="lib/commons-httpclient.jar"/>
+	<classpathentry kind="lib" path="lib/commons-logging.jar"/>
+	<classpathentry kind="lib" path="lib/jboss-common-client.jar"/>
+	<classpathentry kind="lib" path="lib/jboss-ejb3.jar"/>
+	<classpathentry kind="lib" path="lib/jboss-ejb3x.jar"/>
+	<classpathentry kind="lib" path="lib/jboss-j2ee.jar"/>
+	<classpathentry kind="lib" path="lib/jboss-jmx.jar"/>
+	<classpathentry kind="lib" path="lib/jboss-remoting.jar"/>
+	<classpathentry kind="lib" path="lib/jboss-system.jar"/>
+	<classpathentry kind="lib" path="lib/jboss-transaction-client.jar"/>
+	<classpathentry kind="lib" path="lib/jboss-aop-jdk50.jar"/>
+	<classpathentry kind="lib" path="lib/jboss-aspect-library-jdk50.jar"/>
+	<classpathentry kind="lib" path="lib/jboss.jar"/>
+	<classpathentry kind="lib" path="lib/hibernate3.jar"/>
+	<classpathentry kind="lib" path="lib/jbossall-client.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

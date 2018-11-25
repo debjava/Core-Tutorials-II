@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:iso:std:iso:20022:tech:xsd:pain.001.001.02" xsi:schemaLocation="urn:iso:std:iso:20022:tech:xsd:pain.001.001.02 pain.001.001.02.xsd">
+<pain.001.001.02>
+<GrpHdr>
+<MsgId>02062009065543813</MsgId>
+<CreDtTm>2009-06-02T06:55:43</CreDtTm>
+<BtchBookg>true</BtchBookg>
+<NbOfTxs>2</NbOfTxs>
+<Grpg>MIXD</Grpg>
+<InitgPty>
+<PstlAdr>
+<Ctry>FI</Ctry>
+</PstlAdr>
+</InitgPty>
+</GrpHdr>
+<PmtInf>
+<PmtInfId>LÄH.ERÄ:090602065542</PmtInfId>
+<PmtMtd>TRF</PmtMtd>
+<PmtTpInf>
+<SvcLvl>
+<Cd>SEPA</Cd>
+</SvcLvl>
+</PmtTpInf>
+<ReqdExctnDt>2009-06-02</ReqdExctnDt>
+<Dbtr>
+<Nm>DnB testiyritys</Nm>
+<Id>
+<OrgId>
+<BkPtyId>6654432111</BkPtyId>
+</OrgId>
+</Id>
+</Dbtr>
+<DbtrAcct>
+<Id>
+<IBAN>FI3837371040004444</IBAN>
+</Id>
+</DbtrAcct>
+<DbtrAgt>
+<FinInstnId>
+<BIC>DNBNFIHH</BIC>
+</FinInstnId>
+</DbtrAgt>
+<CdtTrfTxInf>
+<PmtId>
+<InstrId>MAKSU:2 TL:10000</InstrId>
+<EndToEndId>MAKSU:2 TL:10000</EndToEndId>
+</PmtId>
+<Amt>
+<InstdAmt Ccy="EUR">20.00</InstdAmt>
+</Amt>
+<CdtrAgt>
+<FinInstnId>
+<BIC>DABAFIHH</BIC>
+</FinInstnId>
+</CdtrAgt>
+<Cdtr>
+<Nm>BasWare Oyj</Nm>
+<PstlAdr>
+<Ctry>FI</Ctry>
+</PstlAdr>
+</Cdtr>
+<CdtrAcct>
+<Id>
+<IBAN>FI6080001300079044</IBAN>
+</Id>
+</CdtrAcct>
+<RmtInf>
+<Ustrd>Ääkkösiä ja ? merkki</Ustrd>
+</RmtInf>
+</CdtTrfTxInf>
+<CdtTrfTxInf>
+<PmtId>
+<InstrId>MAKSU:1 TL:10000</InstrId>
+<EndToEndId>MAKSU:1 TL:10000</EndToEndId>
+</PmtId>
+<Amt>
+<InstdAmt Ccy="EUR">10.00</InstdAmt>
+</Amt>
+<CdtrAgt>
+<FinInstnId>
+<BIC>NDEAFIHH</BIC>
+</FinInstnId>
+</CdtrAgt>
+<Cdtr>
+<Nm>AAC-Opisto Oy</Nm>
+<PstlAdr>
+<Ctry>FI</Ctry>
+</PstlAdr>
+</Cdtr>
+<CdtrAcct>
+<Id>
+<IBAN>FI2020893800026423</IBAN>
+</Id>
+</CdtrAcct>
+<RmtInf>
+<Strd>
+<CdtrRefInf>
+<CdtrRefTp>
+<Cd>SCOR</Cd>
+</CdtrRefTp>
+<CdtrRef>123</CdtrRef>
+</CdtrRefInf>
+</Strd>
+</RmtInf>
+</CdtTrfTxInf>
+</PmtInf>
+</pain.001.001.02>
+</Document>

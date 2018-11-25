@@ -1,0 +1,15 @@
+
+public class Worker 
+{
+	private String name = null;
+	
+	public Worker( String name )
+	{
+		super();
+		this.name = name;
+	}
+	public void doWork()
+	{
+		
+	}
+}

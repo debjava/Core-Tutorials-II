@@ -1,0 +1,5 @@
+package njunit.annotation;
+
+public class Example {
+
+}

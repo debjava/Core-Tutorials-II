@@ -1,0 +1,5 @@
+
+public class DeadThread1 implements Runnable 
+{
+
+}

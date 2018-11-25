@@ -1,0 +1,6 @@
+package njunit.annotation;
+
+public class TestRunner
+{
+
+}

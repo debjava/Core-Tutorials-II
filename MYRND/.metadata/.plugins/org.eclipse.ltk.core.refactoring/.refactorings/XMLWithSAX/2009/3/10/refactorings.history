@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename local variable &apos;arg2&apos; in &apos;com.dds.core.xml.sax.SAXHandler1.startElement(...)&apos; to &apos;tagName&apos;&#x0D;&#x0A;- Original project: &apos;XMLWithSAX&apos;&#x0D;&#x0A;- Original element: &apos;com.dds.core.xml.sax.SAXHandler1.startElement(String, String, String, Attributes).arg2&apos;&#x0D;&#x0A;- Renamed element: &apos;arg2&apos;&#x0D;&#x0A;- Update references to refactored element" description="Rename local variable &apos;arg2&apos;" id="org.eclipse.jdt.ui.rename.local.variable" input="/src&lt;com.dds.core.xml.sax{SAXHandler1.java[SAXHandler1~startElement~QString;~QString;~QString;~QAttributes;@arg2!1001!1011!1008!1011!QString;" name="tagName" references="true" stamp="1236256635696" version="1.0"/>
+</session>

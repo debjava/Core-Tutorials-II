@@ -1,0 +1,5 @@
+package org.jboss.tutorial.stateful.bean;
+
+public interface ShoppingCart {
+
+}

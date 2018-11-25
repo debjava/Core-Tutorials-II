@@ -1,0 +1,28 @@
+
+public class Emp 
+{
+	@MinLength(10)
+	@MaxLength(20)
+	private String name;
+
+	public String getName()
+	{
+		return name;
+	}
+	@MinLength(10)
+	@MaxLength(20)
+	public void setName(String name)
+	{
+		try
+		{
+			
+		}
+		catch( Exception e )
+		{
+			e.printStackTrace();
+		}
+		
+		this.name = name;
+	}
+	
+}

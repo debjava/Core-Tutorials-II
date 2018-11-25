@@ -1,0 +1,44 @@
+Creating elements for TestFrame1.java
+
+
+                                                                                                                >>>  about to create class java.awt.GridBagLayout, constructor=public java.awt.GridBagLayout()
+                                                                                                                <<< created class java.awt.GridBagLayout
+
+                                                                                                                >>>  about to create class java.awt.GridBagConstraints, constructor=public java.awt.GridBagConstraints(int,int,int,int,double,double,int,int,java.awt.Insets,int,int)
+
+                                                                                                                    >>>  about to create class java.awt.Insets, constructor=public java.awt.Insets(int,int,int,int)
+                                                                                                                    <<< created class java.awt.Insets
+                                                                                                                <<< created class java.awt.GridBagConstraints
+
+                                                                                                                >>>  about to create class java.awt.GridBagConstraints, constructor=public java.awt.GridBagConstraints(int,int,int,int,double,double,int,int,java.awt.Insets,int,int)
+
+                                                                                                                    >>>  about to create class java.awt.Insets, constructor=public java.awt.Insets(int,int,int,int)
+                                                                                                                    <<< created class java.awt.Insets
+                                                                                                                <<< created class java.awt.GridBagConstraints
+
+                                                                                                                >>>  about to create class java.awt.GridBagConstraints, constructor=public java.awt.GridBagConstraints(int,int,int,int,double,double,int,int,java.awt.Insets,int,int)
+
+                                                                                                                    >>>  about to create class java.awt.Insets, constructor=public java.awt.Insets(int,int,int,int)
+                                                                                                                    <<< created class java.awt.Insets
+                                                                                                                <<< created class java.awt.GridBagConstraints
+
+                                                                                                                >>>  about to create class java.awt.GridBagConstraints, constructor=public java.awt.GridBagConstraints(int,int,int,int,double,double,int,int,java.awt.Insets,int,int)
+
+                                                                                                                    >>>  about to create class java.awt.Insets, constructor=public java.awt.Insets(int,int,int,int)
+                                                                                                                    <<< created class java.awt.Insets
+                                                                                                                <<< created class java.awt.GridBagConstraints
+
+                                                                                                                >>>  about to create class javax.swing.JFrame, constructor=public javax.swing.JFrame() throws java.awt.HeadlessException
+                                                                                                                <<< created class javax.swing.JFrame
+
+                                                                                                                >>>  about to create class javax.swing.JRadioButton, constructor=public javax.swing.JRadioButton()
+                                                                                                                <<< created class javax.swing.JRadioButton
+
+                                                                                                                >>>  about to create class javax.swing.JRadioButton, constructor=public javax.swing.JRadioButton()
+                                                                                                                <<< created class javax.swing.JRadioButton
+
+                                                                                                                >>>  about to create class javax.swing.JLabel, constructor=public javax.swing.JLabel()
+                                                                                                                <<< created class javax.swing.JLabel
+
+                                                                                                                >>>  about to create class javax.swing.JLabel, constructor=public javax.swing.JLabel()
+                                                                                                                <<< created class javax.swing.JLabel

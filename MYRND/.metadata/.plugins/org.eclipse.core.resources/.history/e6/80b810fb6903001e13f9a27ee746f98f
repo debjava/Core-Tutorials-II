@@ -1,0 +1,44 @@
+package org.jboss.tutorial.stateful.client;
+
+import java.util.HashMap;
+import javax.naming.InitialContext;
+import org.jboss.tutorial.stateful.bean.ShoppingCart;
+
+public class Client
+{
+   public static void main(String[] args) throws Exception
+   {
+      InitialContext ctx = new InitialContext();
+      ShoppingCart cart = (ShoppingCart) ctx.lookup("ShoppingCartBean/remote");
+
+      System.out.println("Buying 1 memory stick");
+      cart.buy("Memory stick", 1);
+      System.out.println("Buying another memory stick");
+      cart.buy("Memory stick", 1);
+
+      System.out.println("Buying a laptop");
+      cart.buy("Laptop", 1);
+
+      System.out.println("Print cart:");
+      HashMap<String, Integer> fullCart = cart.getCartContents();
+      for (String product : fullCart.keySet())
+      {
+         System.out.println(fullCart.get(product) + "     " + product);
+      }
+
+      System.out.println("Checkout");
+      cart.checkout();
+
+      System.out.println("Should throw an object not found exception by invoking on cart after @Remove method");
+      try
+      {
+         cart.getCartContents();
+      }
+      catch (Exception e)
+      {
+         System.out.println("Successfully caught no such object exception.");
+      }
+
+
+   }
+}

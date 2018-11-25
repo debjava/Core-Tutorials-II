@@ -1,0 +1,56 @@
+<project name="JMSMDB-tutorial" default="deploy">
+
+    <property name="sourcedir"		value="${basedir}/src"/>
+    <property name="targetdir"		value="${basedir}/bin"/>
+    <property name="librarydir"		value="${basedir}/lib"/>
+	<property name="deploy.dir"		value="C:/devsetup/jboss-4.0.4.GA/server/default/deploy"/>
+
+    <path id="libraries">
+        <fileset dir="${librarydir}">
+            <include name="*.jar"/>
+        </fileset>
+    </path>
+
+    <target name="clean">
+        <delete dir="${targetdir}"/>
+        <mkdir dir="${targetdir}"/>
+    </target>
+
+    <target name="compile" depends="clean">
+      <javac srcdir="${sourcedir}"
+             destdir="${targetdir}"
+             classpathref="libraries"/>
+    </target>
+
+    <target name="copymetainf" depends="compile">
+        <copy todir="${targetdir}/META-INF/">
+            <fileset dir="${basedir}/META-INF">
+                <include name="**/*.xml"/>
+            </fileset>
+        </copy>
+		<copy file="JMSMBDservice-service.xml" todir="${targetdir}"/>
+		<copy file="my-service.xml" todir="${targetdir}"/>
+    </target>
+
+	<target name="createJar" description="To create a jar file" depends="copymetainf">
+		<jar jarfile="${targetdir}/MYMDB.jar"	basedir="${targetdir}" excludes="dds/**">
+		</jar>
+	</target>
+
+	<target name="receiverJar" description="To create a jar file" depends="createJar">
+		<jar jarfile="${targetdir}/Receiver.jar" basedir="${targetdir}" excludes="dds/**,com/**,META-INF/**,MYMDB.jar">
+		</jar>
+	</target>
+
+	<target name="testJar" description="To create a jar file" depends="receiverJar">
+		<jar jarfile="${targetdir}/test.jar" basedir="${targetdir}" excludes="dds/**,ser/**,com/**,META-INF/**,MYMDB.jar,receiverJar">
+		</jar>
+	</target>
+
+
+	<target name="deploy" description="Deploying to JBOSS" depends="testJar">
+		<copy file="my-service.xml" todir="${deploy.dir}"/>
+		<copy file="${targetdir}/test.jar" todir="${deploy.dir}"/>
+	</target>
+
+</project>

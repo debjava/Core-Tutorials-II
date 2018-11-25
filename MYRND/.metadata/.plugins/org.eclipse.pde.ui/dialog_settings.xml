@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item value="false" key="generateActivator"/>
+	<item value="false" key="uiPlugin"/>
+	<item value="false" key="rcpPlugin"/>
+	<item value="true" key="apiAnalysis"/>
+	<item value="false" key="osgiProject"/>
+	<item value="" key="targetName"/>
+	<section name="PluginExportWizard">
+		<item value="true" key="exportUpdate"/>
+		<item value="false" key="exportSource"/>
+		<item value="false" key="saveAsAnt"/>
+		<item value="" key="alias"/>
+		<item value="" key="keystore"/>
+		<item value="false" key="signJAR"/>
+		<item value="false" key="qualifier"/>
+		<item value="true" key="exportDirectory"/>
+		<item value="C:\Documents and Settings\ab39850\Desktop" key="destination1"/>
+		<item value="" key="password"/>
+		<item value="C:\Documents and Settings\ab39850\Desktop" key="destination0"/>
+		<item value="200905231800" key="qualifierName"/>
+	</section>
+</section>

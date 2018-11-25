@@ -1,0 +1,7 @@
+
+public class Emp 
+{
+	@MinLength(10)
+	@MaxLength(20)
+	private String name;
+}

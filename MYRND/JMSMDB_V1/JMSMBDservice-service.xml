@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE server>
+
+<server>
+<classpath codebase="deploy" archives="Receiver.jar"/>
+  	<mbean code="ser.JMSMBDService"
+		name ="Corona:service=SAdaptor">
+		<depends>jboss.mq:service=InvocationLayer,type=UIL2,alias=UIL2ConnectionFactory</depends>
+		<depends>jboss.mq:service=InvocationLayer,type=UIL2</depends>
+		<depends>jboss.mq.destination:service=Topic,name=liluTopic</depends>
+	</mbean>
+</server>

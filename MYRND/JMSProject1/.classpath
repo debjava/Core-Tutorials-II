@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="lib/concurrent.jar"/>
+	<classpathentry kind="lib" path="lib/jboss-client.jar"/>
+	<classpathentry kind="lib" path="lib/jboss-j2ee.jar"/>
+	<classpathentry kind="lib" path="lib/jboss.jar"/>
+	<classpathentry kind="lib" path="lib/jbossmq-client.jar"/>
+	<classpathentry kind="lib" path="lib/jbossmq.jar"/>
+	<classpathentry kind="lib" path="lib/jnpserver.jar"/>
+	<classpathentry kind="lib" path="lib/log4j-1.2.9.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

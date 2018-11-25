@@ -1,0 +1,31 @@
+package org.jboss.tutorial.stateless.client;
+
+import java.util.Properties;
+
+import org.jboss.tutorial.stateless.bean.Calculator;
+
+import javax.naming.InitialContext;
+
+public class Client
+{
+
+	private static Properties jndiProperty = null;
+
+	private static void setJndiProperty()
+	{
+		jndiProperty = new Properties();
+		jndiProperty.setProperty ("java.naming.factory.initial", "org.jnp.interfaces.NamingContextFactory");
+		jndiProperty.setProperty ("java.naming.provider.url","jnp://localhost:1099");
+		jndiProperty.setProperty ("java.naming.factory.url.pkgs",  "org.jboss.naming:org.jnp.interfaces");
+	}
+
+	public static void main(String[] args) throws Exception
+	{
+		setJndiProperty();
+		InitialContext ctx = new InitialContext(jndiProperty);
+		Calculator calculator = (Calculator) ctx.lookup("calculator/Calculator");
+
+		System.out.println("1 + 1 = " + calculator.add(1, 1));
+		System.out.println("1 - 1 = " + calculator.subtract(1, 1));
+	}
+}

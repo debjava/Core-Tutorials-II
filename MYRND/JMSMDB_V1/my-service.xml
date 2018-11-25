@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE server>
+
+<server>
+<classpath codebase="deploy" archives="test.jar"/>
+  	<mbean code="test.MyBeanService"
+		name ="my:service11=test11">
+	</mbean>
+</server>

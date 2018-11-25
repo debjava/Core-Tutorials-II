@@ -1,0 +1,12 @@
+/**
+ * 
+ */
+package com.dds.core.statefull.session.ejb;
+
+/**
+ * @author ab39850
+ *
+ */
+public interface SayMyName {
+
+}

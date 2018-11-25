@@ -1,0 +1,1 @@
+select * from OPE_AUDIT_LOG_TAB

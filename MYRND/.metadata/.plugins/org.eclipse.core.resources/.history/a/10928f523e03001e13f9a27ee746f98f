@@ -1,0 +1,5 @@
+package com.dds.core.statefull.session.ejb;
+
+public class SayMyNameBean {
+
+}

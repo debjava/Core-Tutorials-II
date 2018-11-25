@@ -1,0 +1,14 @@
+
+public class Worker 
+{
+	private String name = null;
+	
+	public Worker()
+	{
+		
+	}
+	public void doWork()
+	{
+		
+	}
+}

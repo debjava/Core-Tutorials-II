@@ -1,0 +1,16 @@
+
+public class DeadThread1 implements Runnable 
+{
+	private Worker worker = null;
+	public DeadThread1( Worker worker)
+	{
+		super();
+		this.worker = worker;
+	}
+	public void run() 
+	{
+		Worker worker1 = new Worker("W1");
+		Worker worker2 = new Worker("W2");
+		worker1.doWork(worker1);
+	}
+}

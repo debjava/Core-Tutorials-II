@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring accessors="true" comment="Delete 6 element(s) from project &apos;MDBUsingEJB3.0&apos;&#x0D;&#x0A;- Original project: &apos;MDBUsingEJB3.0&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     ejb-3_0-api.jar&#x0D;&#x0A;     jboss-j2ee.jar&#x0D;&#x0A;     jboss-jmx.jar&#x0D;&#x0A;     jboss-system.jar&#x0D;&#x0A;     jboss.jar&#x0D;&#x0A;     jbossall-client.jar" description="Delete elements" element1="lib/jboss-system.jar" element2="lib/jboss-j2ee.jar" element3="lib/jboss.jar" element4="lib/jboss-jmx.jar" element5="lib/ejb-3_0-api.jar" element6="lib/jbossall-client.jar" elements="0" flags="589830" id="org.eclipse.jdt.ui.delete" resources="6" stamp="1236007282619" subPackages="false" version="1.0"/>
+</session>

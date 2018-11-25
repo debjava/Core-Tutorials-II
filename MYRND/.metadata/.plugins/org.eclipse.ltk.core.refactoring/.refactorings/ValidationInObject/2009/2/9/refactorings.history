@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring accessors="true" comment="Delete 5 element(s) from project &apos;ValidationInObject&apos;&#x0D;&#x0A;- Original project: &apos;ValidationInObject&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     BusinessObject.java&#x0D;&#x0A;     BusinessObjectBeanInfo.java&#x0D;&#x0A;     ConstrainedObject.java&#x0D;&#x0A;     Driver.java&#x0D;&#x0A;     Validator.java" description="Delete elements" element1="/src&lt;{Validator.java" element2="/src&lt;{ConstrainedObject.java" element3="/src&lt;{BusinessObjectBeanInfo.java" element4="/src&lt;{Driver.java" element5="/src&lt;{BusinessObject.java" elements="5" flags="589830" id="org.eclipse.jdt.ui.delete" resources="0" stamp="1235731780117" subPackages="false" version="1.0"/>
+</session>

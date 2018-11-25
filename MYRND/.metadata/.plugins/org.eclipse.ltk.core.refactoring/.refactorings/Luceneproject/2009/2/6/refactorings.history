@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename compilation unit &apos;InMemeoryExample.java&apos; to &apos;InMemoryExample.java&apos;&#x0D;&#x0A;- Original project: &apos;Luceneproject&apos;&#x0D;&#x0A;- Original element: &apos;InMemeoryExample.java&apos;&#x0D;&#x0A;- Renamed element: &apos;InMemoryExample.java&apos;" description="Rename compilation unit &apos;InMemeoryExample.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src&lt;{InMemeoryExample.java" name="InMemoryExample.java" references="false" stamp="1233589074273" version="1.0"/>
+</session>

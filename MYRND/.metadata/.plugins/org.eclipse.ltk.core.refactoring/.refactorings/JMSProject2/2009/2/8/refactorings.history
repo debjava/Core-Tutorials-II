@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 5 source folder(s) to &apos;lib&apos;&#x0D;&#x0A;- Original project: &apos;JMSProject2&apos;&#x0D;&#x0A;- Destination element: &apos;lib&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     JMSProject2/lib/jbossall-client.jar&#x0D;&#x0A;     JMSProject2/lib/jboss-jmx.jar&#x0D;&#x0A;     JMSProject2/lib/jboss-j2ee.jar&#x0D;&#x0A;     JMSProject2/lib/jboss.jar&#x0D;&#x0A;     JMSProject2/lib/jboss-system.jar" description="Copy source folders" element1="/lib\/jbossall-client.jar" element2="/lib\/jboss-jmx.jar" element3="/lib\/jboss-j2ee.jar" element4="/lib\/jboss.jar" element5="/lib\/jboss-system.jar" flags="6" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyRoots" roots="5" stamp="1235036309020" target="/TestJMSProj1/lib" version="1.0"/>
+</session>

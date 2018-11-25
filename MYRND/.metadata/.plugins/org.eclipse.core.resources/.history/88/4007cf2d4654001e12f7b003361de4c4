@@ -1,0 +1,25 @@
+
+public class Worker 
+{
+	private String name = null;
+	
+	public String getName() {
+		return name;
+	}
+
+	public Worker( String name )
+	{
+		super();
+		this.name = name;
+	}
+	
+	public synchronized void doWork( Worker worker )
+	{
+		System.out.println("Worker Name------>"+worker.getName());
+	}
+	
+	public synchronized void doInternalWork( Worker worker )
+	{
+		
+	}
+}

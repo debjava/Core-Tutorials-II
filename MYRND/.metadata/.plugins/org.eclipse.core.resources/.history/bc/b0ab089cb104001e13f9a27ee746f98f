@@ -1,0 +1,9 @@
+@Documented
+@Target({METHOD,TYPE})
+@Retention(RUNTIME) 
+public @interface SecurityPermission
+{
+    String[] value();
+}
+
+

@@ -1,0 +1,5 @@
+package org.jboss.tutorial.stateful.client;
+
+public class Client {
+
+}

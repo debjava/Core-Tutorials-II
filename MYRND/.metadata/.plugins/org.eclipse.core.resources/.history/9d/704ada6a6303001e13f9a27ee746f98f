@@ -1,0 +1,45 @@
+<project name="EJB using stateless session bean" default="deploy">
+
+    <property name="sourcedir"		value="${basedir}/src"/>
+    <property name="bin.dir"		value="${basedir}/bin"/>
+    <property name="librarydir"		value="${basedir}/lib"/>
+    <property name="distdir"		value="${basedir}/dist"/>
+	<property name="jar.name"		value="${bin.dir}/StatelessSessionBean3.jar"/>
+    <!-- Change the path of your Jboss -->
+	<property name="deploy.dir"		value="C:/devsetup/jboss-4.2.3.GA/server/default/deploy"/>
+
+    <path id="libraries">
+        <fileset dir="${librarydir}">
+            <include name="*.jar"/>
+        </fileset>
+    </path>
+
+    <target name="clean">
+        <delete dir="${distdir}"/>
+        <mkdir dir="${distdir}"/>
+    </target>
+
+    <target name="compile" depends="clean">
+      <javac srcdir="${sourcedir}"
+             destdir="${distdir}"
+             classpathref="libraries"/>
+    </target>
+<!--
+    <target name="copymetainf" depends="compile">
+        <copy todir="${distdir}/META-INF/">
+            <fileset dir="${basedir}/META-INF">
+                <include name="**/*.xml"/>
+            </fileset>
+        </copy>		
+    </target>
+-->
+	<!-- <target name="createJar" description="To create a jar file" depends="copymetainf"> -->
+	<target name="createJar" description="To create a jar file" depends="copymetainf">
+		<jar jarfile="${jar.name}"	basedir="${distdir}" />
+	</target>
+
+	<target name="deploy" description="Deploying to JBOSS" depends="createJar">
+		<copy file="${jar.name}" todir="${deploy.dir}"/>
+	</target>
+
+</project>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="lib/ant-contrib.jar"/>
+	<classpathentry kind="lib" path="lib/jboss-ejb3-cache.jar"/>
+	<classpathentry kind="lib" path="lib/jboss-ejb3-common-client.jar"/>
+	<classpathentry kind="lib" path="lib/jboss-ejb3-common.jar"/>
+	<classpathentry kind="lib" path="lib/jboss-ejb3-core-client.jar"/>
+	<classpathentry kind="lib" path="lib/jboss-ejb3-core.jar"/>
+	<classpathentry kind="lib" path="lib/jboss-ejb3-deployers.jar"/>
+	<classpathentry kind="lib" path="lib/jboss-ejb3-ext-api-impl.jar"/>
+	<classpathentry kind="lib" path="lib/jboss-ejb3-ext-api.jar"/>
+	<classpathentry kind="lib" path="lib/jboss-ejb3-interceptors.jar"/>
+	<classpathentry kind="lib" path="lib/jboss-ejb3-mc-int.jar"/>
+	<classpathentry kind="lib" path="lib/jboss-ejb3-metadata.jar"/>
+	<classpathentry kind="lib" path="lib/jboss-ejb3-proxy-client.jar"/>
+	<classpathentry kind="lib" path="lib/jboss-ejb3-proxy-clustered-client.jar"/>
+	<classpathentry kind="lib" path="lib/jboss-ejb3-proxy-clustered.jar"/>
+	<classpathentry kind="lib" path="lib/jboss-ejb3-proxy.jar"/>
+	<classpathentry kind="lib" path="lib/jboss-ejb3-security-client.jar"/>
+	<classpathentry kind="lib" path="lib/jboss-ejb3-security.jar"/>
+	<classpathentry kind="lib" path="lib/jboss-ejb3-transactions.jar"/>
+	<classpathentry kind="lib" path="lib/jboss-jpa-deployers.jar"/>
+	<classpathentry kind="lib" path="lib/jboss-metadata.jar"/>
+	<classpathentry kind="lib" path="lib/ejb-3_0-api.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

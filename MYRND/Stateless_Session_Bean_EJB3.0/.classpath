@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="test"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="lib/bootstrap.jar"/>
+	<classpathentry kind="lib" path="lib/ejb.jar"/>
+	<classpathentry kind="lib" path="lib/ibmcfw.jar"/>
+	<classpathentry kind="lib" path="lib/ibmorb.jar"/>
+	<classpathentry kind="lib" path="lib/prop.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

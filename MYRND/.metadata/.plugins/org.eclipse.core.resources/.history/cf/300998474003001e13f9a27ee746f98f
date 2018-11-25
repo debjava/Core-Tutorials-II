@@ -1,0 +1,15 @@
+import java.util.Properties;
+
+
+public class TestStatefullSessionBean 
+{
+	private static Properties jndiProperty = null;
+
+	private static void setJndiProperty()
+	{
+		jndiProperty = new Properties();
+		jndiProperty.setProperty ("java.naming.factory.initial", "org.jnp.interfaces.NamingContextFactory");
+		jndiProperty.setProperty ("java.naming.provider.url","jnp://localhost:1099");
+		jndiProperty.setProperty ("java.naming.factory.url.pkgs",  "org.jboss.naming:org.jnp.interfaces");
+	}
+}

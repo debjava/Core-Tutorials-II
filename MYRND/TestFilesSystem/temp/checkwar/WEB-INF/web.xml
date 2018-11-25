@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
+    version="2.4">
+
+  <context-param>
+    <param-name>some-port</param-name>
+    <param-value>5000</param-value>
+  </context-param>
+  <servlet>
+    <servlet-name>init</servlet-name>
+    <servlet-class>ServletInitializer</servlet-class>
+	<load-on-startup>1</load-on-startup> 
+    <init-param>
+      <param-name>URL</param-name>
+      <param-value>jdbc:mysql://localhost/pizza</param-value>	 
+    </init-param>
+    <init-param>
+      <param-name>UID</param-name>
+      <param-value>id</param-value>
+    </init-param>
+    <init-param>
+      <param-name>PWD</param-name>
+      <param-value>secret</param-value>
+    </init-param>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>init</servlet-name>
+    <url-pattern>/init</url-pattern>
+  </servlet-mapping>
+
+</web-app>
