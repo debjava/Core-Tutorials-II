@@ -1,0 +1,27 @@
+D/costfunctions////
+/AbstractStringMetric.java/0/dummy timestamp//
+/BlockDistance.java/0/dummy timestamp//
+/ChapmanLengthDeviation.java/0/dummy timestamp//
+/ChapmanMatchingSoundex.java/0/dummy timestamp//
+/ChapmanMeanLength.java/0/dummy timestamp//
+/ChapmanOrderedNameCompoundSimilarity.java/0/dummy timestamp//
+/CosineSimilarity.java/0/dummy timestamp//
+/DiceSimilarity.java/0/dummy timestamp//
+/EuclideanDistance.java/0/dummy timestamp//
+/InterfaceStringMetric.java/0/dummy timestamp//
+/JaccardSimilarity.java/0/dummy timestamp//
+/Jaro.java/0/dummy timestamp//
+/JaroWinkler.java/0/dummy timestamp//
+/Levenshtein.java/0/dummy timestamp//
+/MatchingCoefficient.java/0/dummy timestamp//
+/MongeElkan.java/0/dummy timestamp//
+/NeedlemanWunch.java/0/dummy timestamp//
+/OverlapCoefficient.java/0/dummy timestamp//
+/package.html/0/dummy timestamp//
+/QGramsDistance.java/0/dummy timestamp//
+/SmithWaterman.java/0/dummy timestamp//
+/SmithWatermanGotoh.java/0/dummy timestamp//
+/SmithWatermanGotohWindowedAffine.java/0/dummy timestamp//
+/Soundex.java/0/dummy timestamp//
+/TagLink.java/0/dummy timestamp//
+/TagLinkToken.java/0/dummy timestamp//

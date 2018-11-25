@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Shell xmlns="http://www.novocode.com/namespaces/naf"
+	title="About ExplorerExample" resize="false" position="center-parent" trim="dialog" >
+
+	<layout type="form" />
+		
+	<Composite ld.spec="0,1,0" ld.height="4em" bgcolor="widget-background:lighter">
+		
+		<layout type="form" />
+
+		<Composite ld.spec="0,,0,1" ld.width="1em" bgcolor="white" />
+
+		<CLabel text="ExplorerExample " font="2em" ld.spec=":prev,:next,0,1"
+			gradientColors="white, widget-background:lighter" fgcolor="black" />
+
+		<Label image="sysimage:information" ld.spec=",1-1em,0,1" />
+	
+	</Composite>
+
+	<!--Separator id="aLine1" orientation="horizontal" native="false" ld.spec="0,1,:prev" /-->
+	<ScaledImage gradientColors="title-background, title-background-gradient" id="aLine1"
+		orientation="horizontal" ld.spec="0,1,:prev" ld.height="2px" />
+	
+	<Label text="Written by Stefan Zeiger &lt;" id="aLine2" ld.spec="0%+1em,,aLine1+1em" />
+
+	<Hyperlink text="szeiger@novocode.com" href="mailto:szeiger@novocode.com?subject=[SWT]"
+		acceptFocus="false" ld.spec=":prev,,aLine1+1em" displayStyle="mouseover" />
+
+	<Label text="&gt;" ld.spec=":prev,1-1em,aLine1+1em"/>
+
+	<Label text="Home Page: " ld.spec="0+1em,,aLine2+0.5em,aClose-1em" />
+
+	<Hyperlink text="www.novocode.com/swt" href="http://www.novocode.com/swt"
+		acceptFocus="false" ld.spec=":prev,,aLine2+0.5em" displayStyle="mouseover" />
+		
+	<Button text=" |Close " default="true" id="aClose" ld.spec=",1-1em,,1-1em" ld.width="6em" ld.height="1.8em" >
+		<model type="action" id="closeWindow" />
+	</Button>
+
+</Shell>

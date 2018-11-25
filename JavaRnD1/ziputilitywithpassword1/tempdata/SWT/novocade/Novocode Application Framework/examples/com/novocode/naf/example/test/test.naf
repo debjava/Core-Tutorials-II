@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="test.xsl"?>
+
+<group xmlns="http://www.novocode.com/namespaces/naf" xmlns:r="http://www.novocode.com/namespaces/naf-reflect">
+
+	<import class="com.novocode.naf.gui.NGShell" as="MyShell" />
+
+	<MyShell id="shell" image="default_persp.gif" minsize="false">
+
+		<model type="title" id="model2" prefix="NAF [" suffix="]" />
+		
+		<Menu role="menubar">
+			<Menu text="|File">
+				<include ref="test2.naf#filemenu" />
+			</Menu>
+			<Menu text="|Go">
+				<Button text="Back" default="true" image="backward_nav.gif" />
+				<Menu text="Back To" image="backward_nav.gif">
+					<Button text="Page 2" />
+					<Button text="Page 1" />
+				</Menu>
+				<Separator />
+				<Button text="Forward" image="forward_nav.gif" />
+				<Menu text="Forward To" image="forward_nav.gif" />
+			</Menu>
+			<Menu text="Help">
+				<Button text="|About" accelerator="Ctrl+?">
+					<include ref="#about" role="open" />
+				</Button>
+				<Separator />
+				<group m.content="dynamicMenu" />
+				<Separator />
+				<Button text="Test" image="test.png" />
+			</Menu>
+
+		</Menu>
+
+		<layout type="grid" />
+
+		<include ref="#toolbar" />
+
+		<Separator orientation="horizontal" ld.halign="fill" ld.hgrab="true" />
+
+		<CoolBar ld.halign="fill" ld.hgrab="true" resizable="false">
+
+				<Menu role="popup">
+					<Button default="true" text="Customize..." />
+					<Button text="Something else" />
+				</Menu>
+
+			<ToolBar ld.halign="fill" ld.hgrab="true" ld.hspan="2">
+				<Button text="New File" image="new_page.gif" tooltip="Create a new file" />
+				<Separator />
+				<Button image="test.png" />
+				<Button image="save_edit.gif" tooltip="Save this file" />
+			</ToolBar>
+
+			<ToolBar ld.halign="fill" ld.hgrab="true" ld.hspan="2">
+				<Menu text="|File">
+					<include ref="test2.naf#filemenu" />
+				</Menu>
+				<Toggle text="|Toggle" image="new_page.gif">
+					<model type="selected" id="model1" />
+				</Toggle>
+			</ToolBar>
+
+		</CoolBar>
+
+		<Separator orientation="horizontal" ld.halign="fill" ld.hgrab="true" />
+
+		<Composite ld.halign="fill" ld.hgrab="true">
+			<layout type="grid" columns="20" margin="2px" spacing="2px" />
+			<Label text="Dynamic &gt;" />
+			<group m.content="dynamicMenu" />
+			<!-- model type="items" id="dynamicMenu" / -->
+			<Label text="&lt; Dynamic" />
+			<Toggle text="Toggle" ld.hindent="8px">
+				<model type="selected" id="model1" />
+			</Toggle>
+		</Composite>
+
+		<Separator orientation="horizontal" ld.halign="fill" ld.hgrab="true" />
+
+		<Composite ld.halign="fill" ld.hgrab="true" ld.valign="fill" ld.vgrab="true">
+
+			<layout type="grid" columns="2" margin="0.5em" spacing="0.3em" />
+
+			<Button text="F|oo || &amp;" image="default_persp.gif">
+				<layout-data halign="beginning" width="10em" valign="fill" hgrab="true" vgrab="true" />
+				<model type="action" id="action1" command="foo" />
+				<model type="visible" id="model1" />
+			</Button>
+		
+	        <Composite ld.halign="end">
+				<layout type="grid" columns="1" spacing="0.3em" />
+				<Button image="default_persp.gif">
+					<model type="enabled" id="model1" />
+				</Button>
+				<Button image="default_persp.gif">
+					<model type="disabled" id="model1" />
+				</Button>
+			</Composite>
+			
+			<Button type="arrow-up" />
+
+			<Button default="true">
+				&#160;Default&#160;
+				<model type="action" id="defaultAction" />
+			</Button>
+
+			<Toggle text="|Checkbox">
+				<model type="selected" id="model1" />
+			</Toggle>
+			
+			<Toggle text="|Toggle" style="toggle">
+				<model type="selected" id="model1" />
+			</Toggle>
+
+			<Text multi="true">
+				<model type="text" id="model2" />
+			</Text>
+
+			<Text focus="true" align="right">
+				<model type="text" id="model2" />
+			</Text>
+			
+			<Text type="password">
+				<model type="text" id="model2" />
+			</Text>
+			
+			<Label text="Hello |World!\n(with NAF)" />
+
+			<Label>
+				Hello W|orld 2!<br/>
+				(with NAF)
+			</Label>
+
+			<CLabel>
+				Hello W|orld 2!<br/>
+				(with NAF)
+			</CLabel>
+
+			<Label image="backward_nav.gif" />
+
+			<Button image="test.png" />
+
+			<Label image="test.png" />
+
+			<CLabel image="test.png" text="foo" />
+
+			<Toggle style="show-hide" showText=" Details &gt;&gt; " hideText=" &lt;&lt; Details (much longer text) ">
+				<model type="selected" id="model1" />
+			</Toggle>
+			
+			<Composite>
+				<layout type="row" />
+				<layout-data halign="fill" valign="fill" hgrab="true" vgrab="true" />
+
+				<Button text="Row Button 1" />
+
+				<Button text="Row Button 2" />
+
+				<Button text="Row Button 3" />
+
+				<Button text="Row Button 4" />
+
+				<Button text="Row Button 5" />
+
+			</Composite>
+
+			<Scale max="5" pageIncrement="1">
+				<model type="value" id="scalemodel" />
+			</Scale>
+			
+			<ProgressBar indeterminate="true" />
+
+			<Slider max="6">
+				<model type="value" id="scalemodel" />
+			</Slider>
+
+			<ProgressBar min="0" max="5">
+				<model type="value" id="scalemodel" />
+			</ProgressBar>
+
+			<Composite>
+				<layout type="stack">
+					<model type="top" id="scalemodel" />
+				</layout>
+				<Button>StackLayout Button 0</Button>
+				<Button>StackLayout Button 1</Button>
+				<Button>StackLayout Button 2</Button>
+				<Button>StackLayout Button 3</Button>
+				<Button>StackLayout Button 4</Button>
+				<Button>StackLayout Button 5</Button>
+			</Composite>
+
+			<Table linesVisible="true" headerVisible="true" border="true" check="true">
+				<column text="Column 1" image="new_page.gif" />
+				<column text="Column 2" />
+				<column text="Column 3" />
+				<layout-data width="30em" />
+				<model type="content" id="table-content" />
+				<model type="content-provider" id="table-content-provider" />
+				<model type="label-provider" id="table-label" />
+			</Table>
+			
+			<StyledText readOnly="true" bgcolor="widget-background" fgcolor="widget-foreground" border="false" ld.width="15em">
+				<model type="text" id="model2" />
+			</StyledText>
+			
+			<Hyperlink acceptFocus="true" href="mailto:szeiger@novocode.com?subject=Foo%20Bar" text="This is a lin|k" />
+			
+			<Link>An SWT <a href="mailto:szeiger@novocode.com?subject=Foo%20Bar">|link</a> and<br />a second line.</Link>
+			
+			<GroupBox text="GroupBox">
+				<Label text="Hello World" />
+			</GroupBox>
+			
+			<GroupBoxLabel title="GroupBoxLabel" contents="Hello World" />
+			
+			<!-- GenericSWTControl class="org.eclipse.swt.widgets.Button" style="push" r:text="Button Text" / -->
+			
+			<Button m.text="model2" />
+
+		</Composite>
+
+	</MyShell>
+	
+	<ToolBar id="toolbar" shadow="out" ld.halign="fill" ld.hgrab="true" ld.hspan="2">
+		<Menu role="popup">
+			<Button text="Customize..." />
+		</Menu>
+		<Button text="New File" image="new_page.gif" tooltip="Create a new file" />
+		<Button image="test.png" />
+		<Button image="save_edit.gif" tooltip="Save this file" />
+		<Separator />
+		<DropDown text="|Back" image="backward_nav.gif">
+			<model type="action" id="backAction" />
+			<Button text="Page 1" />
+			<Button text="Page 2" />
+			<Button text="Page 3" />
+			<Separator />
+			<group m.content="dynamicMenu" />
+			<Separator />
+			<Menu text="Options">
+				<Separator />
+				<group m.content="dynamicMenu" />
+				<Separator />
+				<Button text="Clear History" />
+			</Menu>
+		</DropDown>
+		<DropDown text="|Forward" image="forward_nav.gif">
+			<model type="action" id="forwardAction" />
+			<Button text="Page 1" />
+			<Button text="Page 2" />
+			<Button text="Page 3" />
+			<Separator />
+			<group m.content="dynamicMenu" />
+			<Separator />
+			<Menu text="Options">
+				<Separator />
+				<group m.content="dynamicMenu" />
+				<Separator />
+				<Button text="Clear History" />
+			</Menu>
+		</DropDown>
+		<Menu text="|File">
+			<include ref="test2.naf#filemenu" />
+		</Menu>
+		<Menu text="Dynamic">
+			<include ref="test2.naf#filemenu" />
+			<Separator />
+			<group m.content="dynamicMenu" />
+			<Separator />
+			<include ref="test2.naf#filemenu" />
+		</Menu>
+		<Separator />
+		<Button text="About this application...">
+			<include ref="#about" role="open" />
+		</Button>
+		<Toggle text="|Toggle" image="new_page.gif">
+			<model type="selected" id="model1" />
+		</Toggle>
+		<Text />
+	</ToolBar>
+
+	<MessageDialog id="about" title="About" icon="information" buttons="ok"
+		message="NAF BarsExample.\nShows menu and tool bars." />
+
+	<group id="dynamicMenu1">
+		<Button text="Dynamic menu 1, item 1" />
+		<Button text="Dynamic menu 1, item 2" />
+	</group>
+
+	<group id="dynamicMenu2">
+		<Button text="Dynamic menu 2, item 1" />
+		<Button text="Dynamic menu 2, item 2" />
+		<Button text="Dynamic menu 2, item 3" />
+		<Button text="Dynamic menu 2, item 4" />
+	</group>
+
+</group>

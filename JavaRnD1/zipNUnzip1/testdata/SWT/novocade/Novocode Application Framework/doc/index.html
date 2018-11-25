@@ -1,0 +1,281 @@
+<html>
+<head>
+<title>Novocode Application Framework</title>
+
+<style type="text/css">
+
+body
+{
+  font-family: Arial, Helvetica, Sans-Serif;
+  background-color: white;
+  color: black;
+}
+
+h1
+{
+  border-bottom: 2px solid #505050;
+  padding-bottom: 4px;
+}
+
+h2
+{
+  border-bottom: 1px solid #c0c0c0;
+  padding-bottom: 4px;
+  margin-top: 1.5em;
+}
+
+table#components
+{
+  font-size: small;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+table#components td.td1
+{
+  background-color: #ffd0d0;
+  border: 1px solid #b06060;
+}
+
+table#components td.td2
+{
+  background-color: #d0d0ff;
+  border: 1px solid #6060b0;
+}
+
+table#components td.td3
+{
+  color: #808080;
+  background-color: #f0f0f0;
+  border: 1px solid #a0a0a0;
+}
+
+table#components td
+{
+  padding: 4px;
+}
+
+pre.code
+{
+  background-color: #f8f8f8;
+  border: 1px dotted #808080;
+  margin-left: 2em;
+  margin-right: 2em;
+  padding: 4px;
+  font-size: 0.8em;
+}
+
+code
+{
+  font-size: 1em;
+}
+
+</style>
+
+</head>
+<body>
+
+<h1>Novocode Application Framework</h1>
+
+<ul>
+	<li><a href="api/index.html">API Documentation</a> (available after running target "doc" in build.xml)</li>
+	<li><a href="#ArchitecturalOverview">Architectural Overview</a></li>
+	<li><a href="#GettingStarted">Getting Started</a></li>
+	<li><a href="#MoreExamples">More Examples</a></li>
+</ul>
+
+<a name="ArchitecturalOverview" id="ArchitecturalOverview" />
+<h2>Architectural Overview</h2>
+
+<p>NAF consists of the following major components:</p>
+
+<table cellspacing="2" id="components">
+	<tr>
+		<td class="td2">Model Persistence</td>
+		<td colspan="6" class="td1">GUI Widgets &amp; Layout Managers</td>
+	</tr>
+	<tr>
+		<td class="td2" rowspan="2">Events and Models</td>
+		<td class="td2">XML Resource Loader</td>
+		<td class="td2">JavaScript Resource Loader</td>
+		<td class="td2" rowspan="2">Color Management</td>
+		<td class="td2" rowspan="2">Image Management</td>
+		<td class="td2" rowspan="2">Custom Controls</td>
+	</tr>
+	<tr>
+		<td colspan="2" class="td2">Resource Management</td>
+	</tr>
+	<tr>
+		<td colspan="6" class="td3">Eclipse Plugins: SWT &amp; JFace</td>
+	</tr>
+</table>
+
+<ul>
+	<li><em>Resource Management</em> (package <code>com.novocode.naf.resource</code>)
+		<p>The <code>ResourceManager</code> can load resource files which contain descriptions of
+		<code>ConfigurableObject</code>s. Multiple <code>ResourceLoader</code> implementations can be
+		plugged in to support different description languages.</p></li>
+	
+	<li><em>XML Resource Loader</em> (package <code>com.novocode.naf.resource.xml</code>)
+		<p>The <code>XMLResourceLoader</code> can parse XML resource files. It is always available in newly
+		created <code>ResourceManager</code>s.</p></li>
+	
+	<li><em>JavaScript Resource Loader</em> (package <code>com.novocode.naf.js</code>)
+		<p>The <code>JSResourceLoader</code> uses <a href="http://www.mozilla.org/rhino/">Mozilla Rhino</a> to
+		execute resource files written in JavaScript. It provides JavaScript methods for defining resources
+		and running NAF applications directly from JavaScript.</p></li>
+	
+	<li><em>Color Management</em> (package <code>com.novocode.naf.color</code>)
+		<p>Colors are represented in NAF by <code>PreciseColor</code> objects which can contain 192-bit RGB and HSV colors.
+		These color objects can be modified with high precision by chains of <code>IColorDecorator</code>s.</p></li>
+	
+	<li><em>Image Management</em> (package <code>com.novocode.naf.gui.image</code>)
+		<p>Images in NAF are represented by <code>IManagedImage</code> objects from which SWT Images can be obtained
+		and released. Managed images are created by <code>IImageManager</code>s.</p></li>
+	
+	<li><em>Custom SWT Controls and JFace Viewers and Providers</em> (packages <code>com.novocode.naf.swt.*</code> and
+		<code>com.novocode.naf.jface.*</code>)
+		<p>These classes do not require any other parts of NAF and can be used independently as well.</p></li>
+
+	<li><em>Events and Models</em> (packages <code>com.novocode.naf.gui.event</code> and
+		<code>com.novocode.naf.model</code>)
+		<p>There are separate model interfaces for reading and modifying different kinds of data (e.g. strings, numbers,
+		window positions) and matching default implementations. Applications can use these default implementations for
+		their view models or implement the model interfaces directly. Actions are sent by <code>IActionSource</code>s and
+		received by <code>IActionListener</code>s which are usually implemented directly by applications. Some common
+		action listeners are provided as separate classes (e.g. <code>DisposeWindowActionListener</code> and
+		<code>SetObjectModelValueActionListener</code>).</p></li>
+	
+	<li><em>GUI Widgets</em> (package <code>com.novocode.naf.gui</code>)
+		<p>All widgets inherit from <code>NGWidget</code> (which in turn is a subclass of <code>NGComponent</code>).
+		Some widget classes can create a <code>WindowInstance</code> object which represents a top-level widget (e.g.
+		an SWT Shell or TrayItem) which is managed by NAF.</p></li>
+	
+	<li><em>Layout Managers</em> (package <code>com.novocode.naf.gui.layout</code>)
+		<p>NAF layout managers are subclasses of <code>NGLayout</code> (a subclass of <code>NGComponent</code>). They
+		are wrappers for SWT layout managers which allow layout and layout data properties to be set from NAF resource
+		files (just as <code>NGWidget</code>s are wrappers for SWT widgets).</p></li>
+	
+	<li><em>Model Persistence</em> (package <code>com.novocode.naf.persist</code>)
+		<p>Persister classes implement the <code>IPersister</code> interface. They are used to create XML representations
+		of models and restore model states from these XML representations.</p></li>
+</ul>
+
+<a name="GettingStarted" id="GettingStarted" />
+<h2>Getting Started</h2>
+
+<p>Opening a window with NAF requires only a few lines of Java code (taken from
+<code>HelloExample.java</code>):</p>
+
+<pre class="code">
+NAFApplication app = new NAFApplication(HelloExample.class);
+app.runMainWindow(app.getResourceObject("hello.naf", IWindowInstanceWidget.class), null);
+app.dispose();
+</pre>
+
+<p>All NAF applications create one <code>NAFApplication</code> object which manages the windows
+and runs the SWT event queue. The <code>Class</code> object which is passed to the
+<code>NAFApplication</code> constructor is used as the base for resolving relative URLs.
+A tree which describes a window is loaded with <code>app.getResourceObject()</code> from the file
+<code>hello.naf</code> which must be in the class path in the same package as
+<code>HelloExample.class</code>. The second argument to <code>getResource()</code> is the expected
+type of the resource object, in this case <code>IWindowInstanceWidget</code> (a GUI widget which
+can be used to create a top-level window). <code>getResource()</code> performs a type check, so you
+get a proper error message (in a <code>NAFException</code>) if the resource object is not what you
+expect. The returned object is passed directly to <code>app.runMainWindow()</code>. This is a
+convenience method for simple applications which instantiates the window, opens it and runs the
+event loop. The method returns when the last managed window has been disposed. Finally all
+native resource associated with the application are disposed by calling
+<code>app.dispose()</code>.</p>
+
+<p>NAF resource files (<code>*.naf</code>) are XML files which describe GUIs as a tree of Widget
+elements. Here is the simple <code>hello.naf</code> file used by <code>HelloExample.java</code>:</p>
+
+<pre class="code">
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;Shell title="HelloExample" resize="false" xmlns="http://www.novocode.com/namespaces/naf"&gt;
+    &lt;Label text=" Hello, World ! " font="Arial Black, 0.5in" /&gt;
+&lt;/Shell&gt;
+</pre>
+
+<p>The first line is the usual header which is found in all XML files. The root element is named
+<code>Shell</code> which translates to the class <code>com.novocode.naf.gui.NGShell</code>. All
+elements in NAF resource files use the NAF namespace which is declared in the root element with
+the special <code>xmlns</code> attribute (<code>xmlns="http://www.novocode.com/namespaces/naf"</code>).
+The other attributes belong to the <code>NGShell</code> widget. Quite obviously, <code>title</code>
+sets the window's title and <code>resize="false"</code> makes the window non-resizable.
+The window contains only one widget, a <code>Label</code> (class
+<code>com.novocode.naf.gui.NGLabel</code>). The label's text is set with the <code>text</code>
+attribute. The <code>font</code> attribute specifies the font for the label (in this case Arial
+Black with a height of 0.5 inches). This attribute is available for all widgets but it may be
+ignored in some cases (e.g. the font specified on a <code>Button</code> will be used when the
+button is used as a Control but not when it is used as a MenuItem).</p>
+
+<p>Note that no layout has been specified for the Shell in this example, so the default
+<code>FillLayout</code> will be used. This makes the Shell's client area the size of the Label.</p>
+
+<a name="MoreExamples" id="MoreExamples" />
+<h2>More Examples</h2>
+
+<p>The sample applications in the "examples" folder demonstrate most of the features of NAF. Here
+is an overview of what you can expect from the individual applications:</p>
+
+<ul>
+	<li><em>com.novocode.naf.example.bars</em>
+	<p>Menus, Toolbars and Coolbars.</p></li>
+
+	<li><em>com.novocode.naf.example.browser</em>
+	<p>A simple web browser. Shows how to use the Browser control and how to connect its models
+	to a typical browser UI.</p></li>
+
+	<li><em>com.novocode.naf.example.details</em>
+	<p>StringList, CLabelModel and FormLayout's invisibilityPolicy.</p></li>
+
+	<li><em>com.novocode.naf.example.dialogs</em>
+	<p>All system dialogs and system images.</p></li>
+
+	<li><em>com.novocode.naf.example.explorer</em>
+	<p>Tree and Table controls, BackgroundTreeContentProvider.</p></li>
+
+	<li><em>com.novocode.naf.example.hello</em>
+	<p>See above.</p></li>
+
+	<li><em>com.novocode.naf.example.ishell</em>
+	<p>MDI with the InternalShell and DesktopForm controls. This is a basic SWT application.
+	There are no NAF wrappers for InternalShell yet.</p></li>
+
+	<li><em>com.novocode.naf.example.js.hello</em>
+	<p>The JavaScript version of the "Hello, World" application. Use the supplied launcher
+	"hello.js.launch" to run it with JSRunner.</p></li>
+
+	<li><em>com.novocode.naf.example.js.model</em>
+	<p>Model binding in JavaScript. Use "model.js.launch" to run it with JSRunner.</p></li>
+
+	<li><em>com.novocode.naf.example.js.test</em>
+	<p>A comprehensive JavaScript resource definition which uses most features of the JSResourceLoader.</p></li>
+
+	<li><em>com.novocode.naf.example.persist</em>
+	<p>Using model persistence to store the state of a GUI.</p></li>
+
+	<li><em>com.novocode.naf.example.splash</em>
+	<p>A splash screen which is updated from a background thread.</p></li>
+
+	<li><em>com.novocode.naf.example.test</em>
+	<p>Various controls and features. This is the testbed for most new controls.</p></li>
+
+	<li><em>com.novocode.naf.example.thread</em>
+	<p>Updating a typical progress dialog from a background thread; Using multiple image versions for a shell image.</p></li>
+
+	<li><em>com.novocode.naf.example.xpath</em>
+	<p>An XPath explorer which allows you to evaluate XPath expressions on NAF widget trees, using a Tree control
+	and NAFNavigator. Also demonstrates the use of @ModelField and @ActionMethod annotations.</p></li>
+
+</ul>
+
+<br />
+<br />
+<p>More documentation to follow...</p>
+
+</body>
+</html>

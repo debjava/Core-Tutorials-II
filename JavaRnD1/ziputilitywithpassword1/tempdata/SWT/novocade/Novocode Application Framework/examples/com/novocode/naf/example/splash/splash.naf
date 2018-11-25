@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Shell xmlns="http://www.novocode.com/namespaces/naf"
+	title="SplashExample" position="center-display-client-area" resize="false" bgcolor="white" trim="">
+
+	<layout type="form" spacing="10px" />
+
+	<Label image="splash.jpg" ld.spec="0,1,0" />
+	<Label bgcolor="white" fgcolor="black" align="center" ld.spec="2%,98%,:prev" m.text="msg" />
+	<ProgressBar min="0" max="100" bgcolor="#d8f0ff" fgcolor="#67a0ff" ld.spec="10px,-10px,:prev,-10px" m.value="progress" />
+
+</Shell>

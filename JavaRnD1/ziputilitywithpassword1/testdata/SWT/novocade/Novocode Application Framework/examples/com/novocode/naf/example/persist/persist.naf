@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<group xmlns="http://www.novocode.com/namespaces/naf">
+
+	<Shell id="main" title="PersistExample" position="center-display-client-area" image="history.gif">
+	
+		<layout type="form" margin="0.7em" spacing="0.7em" invisibilityPolicy="hide" />
+		
+		<SizeGrip ld.spec=",1+0.7em,,1+0.7em" />
+	
+		<CLabel ld.spec="0,1,0">
+			Press the button to open the window with persistent state.
+		</CLabel>
+	
+		<Button text="|Open" default="true" m.action="open"
+			ld.spec="50%-3em,,:prev" ld.width="6em" ld.height="2.5em" />
+
+		<Separator id="sep" orientation="horizontal" ld.spec="0,1,:prev" />
+
+		<CLabel id="label" ld.spec="0,:next,:prev,data">
+			Saved state from the previous instance of the window:
+		</CLabel>
+		
+		<Button text="|Clear state" ld.spec=",1,sep" m.action="reset" />
+
+		<Text id="data" multi="true" wrap="true" vscroll="true" m.text="data"
+			ld.spec="0,1,:prev,:next" ld.height="13em" ld.width="28em" />
+
+		<CLabel ld.spec="0,1,,1">
+			Note that this example does not actually save the persistent state to disk.<br />
+			You may modify the state data above.
+		</CLabel>
+
+	</Shell>
+
+	<Shell id="persist" title="Persistent state window" modality="primary-modal"
+		width="28em" height="15em" position="center-parent-client-area" image="history.gif">
+
+		<model type="close" id="close" />
+		<model type="window" id="window" persist="true" />
+
+		<layout type="form" />
+
+		<SashForm id="sash" childShadow="etched-in, etched-in" ld.spec="0,1,0,1">
+	
+			<model type="weights" id="weights" persist="true" />
+
+			<Composite bgcolor="#ffffb0" fgcolor="black">
+				<layout type="form" margin="1.5em" />
+				<Label align="center" font="1.5em" ld.spec="0,1,0,1">
+					Manipulate this window, then close and re-open it.
+				</Label>
+			</Composite>
+	
+			<Composite>
+				<layout type="form" margin="0.5em" />
+				<TabFolder ld.spec="0,1,0,1">
+					<model type="page" id="page" persist="true" />
+					<CLabel ld.text="Page 1" text="1" align="center" font="6em, bold" bgcolor="#ffb0b0" fgcolor="black" />
+					<CLabel ld.text="Page 2" text="2" align="center" font="6em, bold" bgcolor="#b0ffb0" fgcolor="black" />
+					<CLabel ld.text="Page 3" text="3" align="center" font="6em, bold" bgcolor="#b0b0ff" fgcolor="black" />
+				</TabFolder>
+			</Composite>
+	
+		</SashForm>
+
+	</Shell>
+	
+	<MessageDialog id="error" title="Error parsing state data" modality="application-modal" icon="error" buttons="ok"
+		m.message="msg" />
+
+</group>

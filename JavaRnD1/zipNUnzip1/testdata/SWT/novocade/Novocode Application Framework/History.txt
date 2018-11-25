@@ -1,0 +1,153 @@
+------------------------------------------------------------------------------
+Release History
+------------------------------------------------------------------------------
+
+Release 0.4 (2008-05-08)
+
+  - Separated component hierarchy, resource management and XML parsing. All
+    components are completely XML-agnostic and the XMLResourceLoader contains
+    no special cases for any class below NGNode.
+
+  - Added JavaScript support via Rhino 1.7r1. This allows using JSON instead
+    of XML for building component trees, plus more advanced model binding
+    in JavaScript. NAF applications can be written entirely in JavaScript and
+    started with the supplied JSRunner tool.
+
+  - Factored out the DOM-like component tree navigation support into NGNode, a
+    common superclass for components.
+
+  - Implementing a marker interface is enough to make any object configurable
+    from a NAF resource file. Attribute and element properties are defined
+    with @ConfProperty annotations.
+
+  - Changed implementation of dynamic widget lists: Instead of using a special
+    model in various components you embed a dynamic NGGroup.
+
+  - Replaced model interfaces for String, IntArray, Color and Font models with
+    parameterized IObjectModels.
+
+  - Simplified model handling in component implementations.
+
+  - Improved NGTable features.
+
+  - Added support for SWT.SEARCH style in NGText.
+
+  - Integrated NGCTabFolder into NGTabFolder.
+
+  - Added ChangeBroadcaster to improve performance of event propagation and to
+    simplify the implementation of custom model classes.
+
+  - Fixed generics warnings and generified more classes.
+
+  - Switched logging from compile-time enabled System.out.println() statements
+    to SLF4J (http://www.slf4j.org/).
+
+  - Migrated build environment to Eclipse 3.3.
+
+  - Updated the included Jaxen JAR to version 1.1.1.
+
+  - Updated required SWT library to the Eclipse 3.3 version and removed the
+    custom .launch files which are no longer required with the new SWT.
+
+Release 0.3 (2005-08-08)
+
+  - Models are collected in instances of the new ModelMap class instead of
+    Map<String, Object>.
+
+  - Dynamic widget creation is now also supported in NGComposite, NGGroupBox,
+    NGFramedComposite and NGShell.
+
+  - Added new custom SizeBorder widget.
+  
+  - Added a non-native InternalShell implementation in package
+    com.novocode.naf.swt.custom.ishell. See the new InternalShellExampleSWT
+    on how to use it with pure SWT code (without NAF).
+
+  - The SizeGrip widget has got a new constructor which allows you to pass in
+    a resizable parent container (which is resized by the SizeGrip) other than
+    the containing Shell.
+
+  - Added NGLink for SWT's new Link control.
+
+  - Added NGScaledImage.
+  
+  - Eclipse 3.1 or higher is required to build NAF.
+  
+  - Creating a WindowInstance from an NGTrayItem will return null if no system
+    tray is available.
+
+  - All SWT custom controls are now licensed under the Eclipse Public License
+    because the Eclipse code on which they are based based has been relicensed
+    as well.
+
+  - The BalloonWindow widget now supports the TOOL style which makes SWT give
+    it a drop shadow (as seen on the "fake" tooltips in Eclipse 3.1) on
+    supported platforms where this feature is enabled.
+
+Release 0.2 (2004-12-23)
+
+  - Integration of MVC models and persistence.
+
+  - Requires Java 5.0. NAF makes heavy use of Generics, Annotations and
+    Enumerations. The SWT Controls in package com.novocode.naf.swt.custom have
+    not been modified for Java 5.0 and should still work down to Java 1.2.
+
+  - Build environment is now Eclipse 3.1 (I20041216-1600 or newer; Older
+    milestone and integration builds will not work!) because Java 5.0 support
+    is required.
+
+  - Widget attributes in XML descriptors are not parsed by the widget classes
+    anymore. Instead the ResourceManager uses Reflection to set widget
+    properties which are marked with an Annotation.
+
+  - Resources are referenced via URLs instead of the URL-like file + fragment
+    paths used in NAF 0.1.
+
+  - The ResourceManager supports processing instructions for XSLT, so it can
+    now load XML files which can be transformed on the fly into a NAF resource
+    file by a suitable stylesheet. This XSLT facility can also be used as a
+    macro / template processor for NAF. See TestExample (with test.xsl).
+
+  - Layout creators are now NGComponents.
+
+  - The ability to create ToolItems and MenuItems has been moved from NGWidget
+    to separate interfaces which declare the required factory methods. The
+    creation of ToolItems from Controls is now implemented in NGToolBar.
+
+  - Creating a default model (via model/@create attribute) is now the
+    default. Setting create="no" is required if no model should be created.
+
+  - NGWidget classes are now resolved by an import mechanism which can import
+    single classes or packages (just like in Java) instead of using a static
+    lookup table in a properties file. The default imports for the GUI classes
+    are contained in the resource file "default-imports.naf" in package
+    com.novocode.naf.gui.
+
+  - Experimental XPath support using the Jaxen XPath interpreter
+    (http://jaxen.werken.com). XPath expressions can be used to navigate in
+    NGComponent trees. You can try this with the new XPathExample.
+
+  - New concise syntax for simple model bindings. See XPathExample and
+    BrowserExample.
+
+  - New concise syntax for FormData. See SplashExample, XPathExample and
+    BrowserExample. This syntax can also be used directly in SWT applications
+    with com.novocode.naf.gui.layout.FormDataCreator.
+
+  - NAF is now licensed under the EPL instead of CPL (with some exceptions;
+    see above for detailed licensing conditions).
+
+  - The NAF Eclipse Project now depends directly on the required Eclipse
+    plugins. If these are imported as binary projects into the same folder as
+    NAF (usually the workspace), the supplied .launch files will also find the
+    platform-specific SWT libraries without further configuration.
+    
+  - NGTable is now using the JFace TableViewer instead of a proprietary table
+    model based on a raw SWT Table. NGTableTree has been added as a wrapper
+    for JFace's TableTreeViewer.
+    
+  - Basic Browser support. See NGBrowser and BrowserExample.
+
+Release 0.1 (2004-09-19)
+
+  - Initial release

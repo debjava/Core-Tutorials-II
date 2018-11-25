@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Shell title="ThreadExample" images="eclipse-small.png;eclipse-big.png" xmlns="http://www.novocode.com/namespaces/naf">
+
+	<layout type="form" margin="0.7em" spacing="0.7em" invisibilityPolicy="hide" />
+
+    <Label ld.top="0%" ld.left="0%" ld.right="100%">
+		<model type="text" id="msg" />
+    </Label>
+
+	<ProgressBar min="0" max="1000" ld.top=":prev" ld.left="0%" ld.right="100%" ld.width="30em">
+		<model type="value" id="progress" />
+	</ProgressBar>
+
+    <Label id="c3" ld.top=":prev" ld.left="0%" ld.right="100%">
+		<model type="text" id="estimate" />
+    </Label>
+
+	<Button default="true" focus="true" ld.top="c3+0.7em" ld.right=":next" ld.width="6em">
+		<model type="action" id="close" />
+		Close
+	</Button>
+		
+	<Toggle style="show-hide" text="|Details" ld.top="c3+0.7em" ld.right="100%" ld.width="6em">
+		<model type="selected" id="show" />
+	</Toggle>
+	
+	<StringList keepBottomVisible="true">
+		<layout-data height="8em" top=":prev+0.7em" left="0%" right="100%" bottom="100%" />
+		<model type="items" id="details" />
+		<model type="visible" id="show" />
+	</StringList>
+
+</Shell>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<TrayItem image="cfldr_obj.gif" tooltip="ExplorerExample Tray Icon" xmlns="http://www.novocode.com/namespaces/naf">
+
+	<model type="action" id="trayAction" />
+	<model type="default-action" id="trayDefaultAction" />
+
+	<Menu role="popup">
+
+		<Button text="|About ExplorerExample...">
+			<include ref="about.naf" role="open" />
+		</Button>
+
+		<Button text="|Quit">
+			<model type="action" id="exit" />
+		</Button>
+
+	</Menu>
+
+</TrayItem>

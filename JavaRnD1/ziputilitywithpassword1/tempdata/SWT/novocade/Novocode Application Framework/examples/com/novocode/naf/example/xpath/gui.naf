@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Shell title="XPathExample" width="600px" height="500px" image="bundle_obj.gif" xmlns="http://www.novocode.com/namespaces/naf">
+
+	<Menu role="menubar">
+		<Menu text="|File">
+			<Button text="|Quit" accelerator="Alt+F4" m.action="exit" />
+		</Menu>
+		<Menu text="|View">
+			<Button image="expandall.gif" text="|Expand All Tree Nodes" accelerator="Ctrl++" m.action="expandAll" />
+			<Button image="collapseall.gif" text="|Collapse All Tree Nodes" accelerator="Ctrl+-" m.action="collapseAll" />
+			<Separator />
+			<Toggle image="hierarchicalLayout.gif" text="|Auto-Expand Tree Nodes" accelerator="Ctrl+A" m.selected="autoExpand" />
+		</Menu>
+		<Menu text="|Help">
+			<Button text="|About" accelerator="Ctrl+?">
+				<MessageDialog icon="information" buttons="ok" title="About XPathExample" role="open"
+					message="An XPath explorer which allows you to evaluate XPath expressions on NAF widget trees.\nWritten by Stefan Zeiger &lt;szeiger@novocode.com&gt;" />
+			</Button>
+		</Menu>
+	</Menu>
+
+	<layout type="form" />
+
+	<Separator orientation="horizontal" ld.spec="0,1,0" />
+
+	<CoolBar resizable="false" ld.spec="0,1,:prev">
+	
+		<ToolBar textAlign="right">
+			<Button image="expandall.gif" tooltip="Expand All Tree Nodes (Ctrl++)" m.action="expandAll" />
+			<Button image="collapseall.gif" tooltip="Collapse All Tree Nodes (Ctrl+-)" m.action="collapseAll" />
+			<Toggle image="hierarchicalLayout.gif" tooltip="Auto-Expand Tree Nodes (Ctrl+A)" m.selected="autoExpand" />
+		</ToolBar>
+
+		<Composite>
+			<layout type="grid" ld.valign="center" columns="3" />
+			<Label text="|XPath Expression" />
+			<Text ld.halign="fill-grab" ld.width="0.5em" focus="true" ld.hindent="4px" m.text="expression" m.default-select="evaluate" />
+			<ToolBar textAlign="right" ld.hindent="2px">
+				<Button image="run_exc.gif" tooltip="Evaluate the XPath expression" m.action="evaluate" />
+			</ToolBar>
+		</Composite>
+		
+	</CoolBar>
+
+	<Separator orientation="horizontal" ld.spec="0,1,:prev" />
+	
+	<Tree border="false" ld.spec="0,1,:prev,1"
+		m.content="treeContent" m.content-provider="treeContentProvider" m.label-provider="treeLabelProvider"
+		m.expand-all="expandAll" m.collapse-all="collapseAll" />
+
+</Shell>

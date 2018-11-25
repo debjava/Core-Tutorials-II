@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Shell title="DialogsExample" resize="false" xmlns="http://www.novocode.com/namespaces/naf">
+
+	<layout type="grid" columns="2" margin="0.3em" spacing="0.3em" equalWidth="true"
+		ld.halign="fill" ld.height="2em" />
+
+	<Button text="  DirectoryDialog...  ">
+		<DirectoryDialog id="dd" title="Title" message="Message goes here!" role="open">
+			<model type="directory" id="directory" />
+			<model type="action" id="buttonSelected" />
+		</DirectoryDialog>
+	</Button>
+
+	<Button text="  FileDialog (Open One)...  ">
+		<FileDialog title="Title" role="open">
+		</FileDialog>
+	</Button>
+
+	<Button text="  FileDialog (Open Multi)...  ">
+		<FileDialog title="Title" multi="true" role="open">
+		</FileDialog>
+	</Button>
+
+	<Button text="  FileDialog (Save)...  ">
+		<FileDialog title="Title" mode="save" role="open">
+		</FileDialog>
+	</Button>
+
+	<Button text="  ColorDialog...  ">
+		<ColorDialog title="Title" role="open">
+			<model type="color" id="color" />
+			<model type="action" id="buttonSelected" />
+		</ColorDialog>
+	</Button>
+
+	<Button text="  FontDialog...  ">
+		<FontDialog title="Title" role="open">
+			<model type="color" id="color" />
+			<model type="font" id="font" />
+			<model type="action" id="buttonSelected" />
+		</FontDialog>
+	</Button>
+
+	<Button text="  PrintDialog...  ">
+		<PrintDialog title="Title" role="open">
+			<model type="print" id="print" />
+			<model type="action" id="buttonSelected" />
+		</PrintDialog>
+	</Button>
+
+	<Button text="  MessageDialog 1 (No Icon, OK)...  ">
+		<MessageDialog title="Title" message="Message" icon="none" buttons="ok" role="open">
+			<model type="action" id="buttonSelected" />
+		</MessageDialog>
+	</Button>
+
+	<Button text="  MessageDialog 2 (Error, OK||Cancel)...  ">
+		<MessageDialog title="Title" message="Message" icon="error" buttons="ok,cancel" role="open">
+			<model type="action" id="buttonSelected" />
+		</MessageDialog>
+	</Button>
+
+	<Button text="  MessageDialog 3 (Information, Yes||No)...  ">
+		<MessageDialog title="Title" message="Message" icon="information" buttons="yes,no" role="open">
+			<model type="action" id="buttonSelected" />
+		</MessageDialog>
+	</Button>
+
+	<Button text="  MessageDialog 4 (Question, Yes||No||Cancel)...  ">
+		<MessageDialog title="Title" message="Message" icon="question" buttons="yes,no,cancel" role="open">
+			<model type="action" id="buttonSelected" />
+		</MessageDialog>
+	</Button>
+
+	<Button text="  MessageDialog 5 (Warning, Retry||Cancel)...  ">
+		<MessageDialog title="Title" message="Message" icon="warning" buttons="retry,cancel" role="open">
+			<model type="action" id="buttonSelected" />
+		</MessageDialog>
+	</Button>
+
+	<Button text="  MessageDialog 6 (Working, Abort||Retry||Ignore)...  ">
+		<MessageDialog title="Title" message="Message" icon="working" buttons="abort,retry,ignore" role="open">
+			<model type="action" id="buttonSelected" />
+		</MessageDialog>
+	</Button>
+
+	<Button text="  System Images  ">
+		<Shell modality="application-modal" trim="dialog" title="System Images" position="center-parent-client-area" resize="false" role="open">
+			<layout type="row" margin="0.5em" spacing="0.5em" fill="true" />
+			<CLabel>System images for use in custom dialogs:</CLabel>
+			<Label image="sysimage:error" tooltip="Error" />
+			<Label image="sysimage:warning" tooltip="Warning" />
+			<Label image="sysimage:information" tooltip="Information" />
+			<Label image="sysimage:question" tooltip="Question" />
+			<Label image="sysimage:working" tooltip="Working" />
+		</Shell>
+	</Button>
+
+</Shell>

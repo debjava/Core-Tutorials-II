@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Shell title="HelloExample" resize="false" xmlns="http://www.novocode.com/namespaces/naf">
+	<Label text=" Hello, World ! " font="Arial Black, 0.5in" />
+</Shell>

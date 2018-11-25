@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<group xmlns="http://www.novocode.com/namespaces/naf">
+
+	<Shell id="shell" image="default_persp.gif" height="15em">
+
+		<model type="title" id="model2" />
+		
+		<Menu role="menubar">
+			<Menu text="|File">
+				<include ref="#filemenu" />
+			</Menu>
+			<Menu text="|Go">
+				<Button text="Back" image="backward_nav.gif" />
+				<Menu text="Back To" image="backward_nav.gif">
+					<Button text="Page 2" />
+					<Button text="Page 1" />
+				</Menu>
+				<Separator />
+				<Button text="Forward" image="forward_nav.gif" />
+				<Menu text="Forward To" image="forward_nav.gif" />
+			</Menu>
+			<Menu text="Help">
+				<Button text="|About" accelerator="Ctrl+?">
+					<include ref="#about" role="open" />
+				</Button>
+				<Button text="Test" image="test.png" />
+			</Menu>
+		</Menu>
+
+		<layout type="grid" />
+
+		<include ref="#toolbar" />
+
+		<Separator orientation="horizontal" ld.halign="fill" ld.hgrab="true" />
+
+		<CoolBar ld.halign="fill" ld.hgrab="true" resizable="false">
+
+				<Menu role="popup">
+					<Button text="Customize..." />
+				</Menu>
+
+			<ToolBar textAlign="right" ld.halign="fill" ld.hgrab="true" ld.hspan="2">
+				<Button text="New File" image="new_page.gif" tooltip="Create a new file" />
+				<Separator />
+				<Button image="test.png" />
+				<Button image="save_edit.gif" tooltip="Save this file" />
+			</ToolBar>
+
+			<ToolBar textAlign="right" ld.halign="fill" ld.hgrab="true" ld.hspan="2">
+				<Menu text="|File">
+					<include ref="#filemenu" />
+				</Menu>
+				<Toggle text="|Toggle" image="new_page.gif">
+					<model type="selected" id="model1" />
+				</Toggle>
+			</ToolBar>
+
+			<Composite>
+			
+				<layout type="grid" columns="2" ld.valign="center" />
+				
+				<Label text="Address: " />
+			
+				<Text ld.halign="fill-grab" ld.width="0.5em">
+					<model type="text" id="model2" />
+				</Text>
+			
+			</Composite>
+
+		</CoolBar>
+
+		<Separator orientation="horizontal" ld.halign="fill" ld.hgrab="true" />
+
+		<Composite ld.halign="fill" ld.hgrab="true" ld.valign="fill" ld.vgrab="true">
+
+			<layout type="fill" />
+
+			<CLabel font="1.5em,italic" align="center" ld.halign="fill" ld.hfill="true">Window Contents</CLabel>
+
+		</Composite>
+
+	</Shell>
+	
+	<ToolBar textAlign="right" id="toolbar" shadow="out" ld.halign="fill" ld.hgrab="true" ld.hspan="2">
+		<Menu role="popup">
+			<Button text="Customize..." />
+		</Menu>
+		<Button text="New File" image="new_page.gif" tooltip="Create a new file" />
+		<Button image="test.png" />
+		<Button image="save_edit.gif" tooltip="Save this file" />
+		<Separator />
+		<DropDown text="|Back" image="backward_nav.gif">
+			<include ref="#pages" />
+		</DropDown>
+		<DropDown text="|Forward" image="forward_nav.gif">
+			<include ref="#pages" />
+		</DropDown>
+		<Menu text="|File">
+			<include ref="#filemenu" />
+		</Menu>
+		<Separator />
+		<Button text="About this application...">
+			<include ref="#about" role="open" />
+		</Button>
+		<Toggle text="|Toggle" image="new_page.gif">
+			<model type="selected" id="model1" />
+		</Toggle>
+		<Text>
+			<model type="text" id="model2" />
+		</Text>
+	</ToolBar>
+
+	<group id="pages">
+		<Button text="Page 1" />
+		<Button text="Page 2" />
+		<Button text="Page 3" />
+		<Separator />
+		<Menu text="Options">
+			<Button text="Clear History" />
+		</Menu>
+	</group>
+	
+	<group id="filemenu">
+		<Button text="|Open..." />
+		<Separator />
+		<Button text="|Quit" accelerator="Ctrl+Q" />
+	</group>
+
+	<MessageDialog id="about" title="About" icon="information" buttons="ok"
+		message="NAF BarsExample.\nShows menu and tool bars." />
+
+</group>

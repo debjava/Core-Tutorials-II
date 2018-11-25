@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<group xmlns="http://www.novocode.com/namespaces/naf">
+
+	<group id="filemenu">
+		<Button text="|Open..." />
+		<Separator />
+		<Button text="|Quit" accelerator="Ctrl+Q" />
+	</group>
+
+</group>

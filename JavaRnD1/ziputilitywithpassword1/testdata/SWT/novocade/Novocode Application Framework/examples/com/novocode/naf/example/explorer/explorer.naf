@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Shell title="ExplorerExample" image="fldr_obj.gif" width="750px" height="550px" xmlns="http://www.novocode.com/namespaces/naf">
+
+	<model type="close" id="exit" />
+
+	<Menu role="menubar">
+		<Menu text="|File">
+			<Button text="|Quit" accelerator="Ctrl+Q">
+				<model type="action" id="exit" />
+			</Button>
+		</Menu>
+		<Menu text="|View">
+			<Toggle text="|Search" accelerator="Ctrl+F" image="insp_sbook.gif">
+				<model type="selected" id="model1" />
+			</Toggle>
+			<Toggle text="F|olders" accelerator="Ctrl+T" image="cfldr_obj.gif">
+				<model type="selected" id="model2" />
+			</Toggle>
+			<Toggle text="|History" accelerator="Ctrl+H" image="day_obj.gif">
+				<model type="selected" id="model3" />
+			</Toggle>
+			<Separator />
+			<Toggle text="Status |Bar" accelerator="Ctrl+B" >
+				<model type="selected" id="model4" initial="true" />
+			</Toggle>
+		</Menu>
+		<Menu text="|Help">
+			<Button text="|About" accelerator="Ctrl+?">
+				<include ref="about.naf" role="open" />
+			</Button>
+		</Menu>
+	</Menu>
+
+	<layout type="form" invisibilityPolicy="hide" adjustWindowSize="no" />
+
+	<ToolBar textAlign="right" shadow="out" ld.left="0%" ld.right="100%" ld.top="0%">
+		<Toggle text="|Search" image="insp_sbook.gif">
+			<model type="selected" id="model1" />
+		</Toggle>
+		<Toggle text="F|olders" image="cfldr_obj.gif">
+			<model type="selected" id="model2" />
+		</Toggle>
+		<Toggle text="|History" image="day_obj.gif">
+			<model type="selected" id="model3" />
+		</Toggle>
+	</ToolBar>
+
+	<Separator orientation="horizontal" ld.top=":prev" ld.left="0%" ld.right="100%" />
+	
+	<SashForm id="sashform" childShadow="etched-in, none" weights="30,70" sashWidth="4px" ld.top=":prev" ld.left="0%" ld.right="100%" ld.bottom=":next-2px">
+
+		<Composite>
+			<layout type="grid" />
+			<Composite ld.halign="fill" ld.hgrab="true">
+				<layout type="form" />
+				<CLabel ld.top="0%" ld.bottom="100%" ld.left="0%+1px" ld.right=":next-2px">
+					<model type="text" id="sidebarTitle" />"
+				</CLabel>
+				<ToolBar ld.top="0%+1px" ld.bottom="100%-1px" ld.right="100%-1px">
+					<Button image="close.png">
+						<model type="action" id="closeSidebar" />
+					</Button>
+				</ToolBar>
+			</Composite>
+			<Separator native="false" orientation="horizontal" ld.halign="fill" ld.hgrab="true" />
+			<Composite bgcolor="white" ld.halign="fill" ld.hgrab="true" ld.valign="fill" ld.vgrab="true">
+				<layout type="fill" />
+				<Tree>
+					<model type="content" id="treeContent" />
+					<model type="content-provider" id="treeContentProvider" />
+					<model type="label-provider" id="treeLabelProvider" />
+				</Tree>
+			</Composite>
+		</Composite>
+
+		<Composite bgcolor="white">
+			<layout type="fill" />
+			<Table focus="true" headerVisible="true" border="true" fullSelection="true"
+				m.content="tableContent" m.content-provider="tableContentProvider" m.label-provider="tableLabelProvider">
+				<column text="Name" width="20em" />
+				<column text="Size" width="6em" align="right" />
+			</Table>
+		</Composite>
+
+	</SashForm>
+	
+	<FramedComposite shadow="in" ld.bottom="100%" ld.left="0%" ld.right="100%">
+		<model type="visible" id="model4" />
+		<layout type="form" />
+		<SizeGrip shadow="in" ld.bottom="100%+1px" ld.right="100%+1px" ld.top="sashform+3px" />
+		<Label ld.left="0%+4px" ld.right="100%-15px" ld.top="0%+2px" ld.bottom="100%-2px">Status bar</Label>
+	</FramedComposite>
+
+</Shell>

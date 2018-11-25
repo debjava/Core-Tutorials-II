@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+
+   <extension
+         id="application"
+         point="org.eclipse.core.runtime.applications">
+      <application>
+         <run
+               class="loginApp.intro.Application">
+         </run>
+      </application>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            name="loginApp.perspective"
+            class="loginApp.intro.Perspective"
+            id="LoginApp.perspective">
+      </perspective>
+   </extension>
+   <extension
+         id="LoginApp"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="LoginApp.application"
+            name="My Login Application">
+      </product>
+   </extension>
+   <extension
+         point="org.eclipse.ui.intro">
+      <intro
+            class="org.eclipse.ui.intro.config.CustomizableIntroPart"
+            id="loginApp.introID">
+      </intro>
+      <introProductBinding
+            introId="loginApp.introID"
+            productId="LoginApp.LoginApp">
+      </introProductBinding>
+   </extension>
+   <extension
+         point="org.eclipse.ui.intro.config">
+      <config
+            introId="loginApp.introID"
+            content="introContent.xml"
+            id="LoginApp.configId">
+         <presentation
+               home-page-id="root">
+            <implementation
+                  kind="html"
+                  os="win32,linux,macosx">
+            </implementation>
+         </presentation>
+      </config>
+   </extension>
+
+</plugin>

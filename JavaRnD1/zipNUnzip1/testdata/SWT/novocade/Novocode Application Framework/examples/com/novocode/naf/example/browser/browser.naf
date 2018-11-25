@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<group xmlns="http://www.novocode.com/namespaces/naf">
+
+	<Shell id="shell" image="discovery.gif" width="700px" height="500px" >
+
+		<model type="title" id="title" suffix=" - NAF Browser" />
+		<model type="MouseUp back" id="back" />
+		<model type="MouseUp forward" id="forward" />
+		
+		<Menu role="menubar">
+			<Menu text="|File">
+				<Button text="|Quit" accelerator="Ctrl+Q" m.action="closeWindow" />
+			</Menu>
+			<Menu text="|View">
+				<include ref="#bar-options-group" />
+			</Menu>
+			<Menu text="|Go">
+				<Button image="backward_nav.gif" text="|Back" m.action="back" m.enabled="back-enabled" />
+				<Button image="forward_nav.gif" text="|Forward" m.action="forward" m.enabled="forward-enabled" />
+				<Separator />
+				<Button image="home_nav.gif" text="|Home" m.action="home" />
+			</Menu>
+			<Menu text="Help">
+				<Button text="|About" accelerator="Ctrl+?">
+					<include ref="#about" role="open" />
+				</Button>
+			</Menu>
+		</Menu>
+
+		<layout type="form" />
+
+		<SizeGrip shadow="in" ld.spec=",1,,1" />
+
+		<Separator orientation="horizontal" ld.spec="0,1,0" />
+
+		<CoolBar resizable="false" ld.spec="0,1,:prev">
+		
+			<include ref="#bar-popup" role="popup" />
+
+			<model type="locked" id="lock-toolbars" />
+
+			<ToolBar textAlign="right">
+				<include ref="#bar-popup" role="popup" />
+				<Button image="backward_nav.gif" tooltip="Go Back" m.action="back" m.enabled="back-enabled" />
+				<Button image="forward_nav.gif" tooltip="Go Forward" m.action="forward" m.enabled="forward-enabled" />
+				<Button image="refresh.gif" tooltip="Reload" m.action="refresh" />
+				<Button image="ch_cancel.gif" tooltip="Stop" m.action="stop" m.enabled="stop-enabled" />
+				<Button image="home_nav.gif" tooltip="Go to the Home Page" m.action="home" />
+			</ToolBar>
+
+			<Composite>
+			
+				<include ref="#bar-popup" role="popup" />
+
+				<layout type="grid" ld.valign="center" columns="3" />
+
+				<Label text="A|ddress">
+					<include ref="#bar-popup" role="popup" />
+				</Label>
+			
+				<Text ld.halign="fill-grab" ld.width="0.5em" focus="true" ld.hindent="4px"
+					m.text="urlinput" m.default-select="go" />
+
+				<ToolBar textAlign="right" ld.hindent="2px">
+					<include ref="#bar-popup" role="popup" />
+					<Button image="run_exc.gif" tooltip="Go to This Address" m.action="go" />
+				</ToolBar>
+			
+			</Composite>
+			
+		</CoolBar>
+
+		<Separator orientation="horizontal" ld.spec="0,1,:prev" />
+
+		<Browser border="true" ld.spec="0,1,:prev+2px,:next-2px"
+			m.url="url" m.title="title" m.status-text="status-text" m.progress-reset="progress"
+			m.back="back" m.forward="forward" m.stop="stop" m.refresh="refresh"
+			m.back-enabled="back-enabled" m.forward-enabled="forward-enabled" m.changing="stop-enabled" />
+
+		<Composite ld.spec="0,1,,1">
+		
+			<layout type="grid" columns="2" ld.valign="fill-grab" />
+			
+			<ProgressBar smooth="true" ld.width="5em" m.progress="progress" />
+
+			<FramedComposite shadow="in" ld.halign="fill-grab" ld.hindent="2px">
+				<layout type="form" />
+				<Label ld.spec="0%+4px,100%-4px,0%+1px,100%-1px" m.text="status-text" />
+			</FramedComposite>
+			
+		</Composite>
+
+	</Shell>
+	
+	<MessageDialog id="about" title="About" icon="information" buttons="ok"
+		message="NAF BrowserExample.\nShows an embedded web browser." />
+
+	<Menu id="bar-popup">
+		<include ref="#bar-options-group" />
+	</Menu>
+	
+	<group id="bar-options-group">
+		<Toggle text="Lock the Tool|bars" m.selected="lock-toolbars" />
+	</group>
+
+</group>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Shell title="DetailsExample" xmlns="http://www.novocode.com/namespaces/naf">
+
+	<layout type="form" margin="0.7em" spacing="0.7em" invisibilityPolicy="hide" />
+
+    <Label id="c1" ld.top="0%" ld.left="0%">
+		Please enter a Java class |name:
+    </Label>
+
+	<Text id="c2">
+		<layout-data top=":prev" left="0%" right="100%" width="25em" />
+		<model type="text" id="name" />
+	</Text>
+	
+    <CLabel id="valid">
+		<layout-data top=":prev" left="0%" right="100%" />
+		<model type="clabel" id="valid" />
+		<image id="error" image="showerr_tsk.gif" />
+		<image id="warn" image="showwarn_tsk.gif" />
+    </CLabel>
+
+	<Toggle style="show-hide" text=" |Details " id="details">
+		<layout-data top=":prev" left="0%" />
+		<model type="selected" id="show" />
+	</Toggle>
+
+	<Button text="|OK" id="ok" default="true" >
+		<layout-data top="valid" right=":next" width="6em" />
+		<model type="enabled" id="isOK" />
+	</Button>
+		
+	<Button text="|Cancel" id="cancel">
+		<layout-data top="valid" right="100%" width="6em" />
+	</Button>
+		
+	<Composite>
+		<layout-data top=":prev" left="0%" right="100%" bottom="100%" />
+		<model type="visible" id="show" />
+		<layout type="form" spacing="0.7em" />
+
+		<Separator orientation="horizontal">
+			<layout-data top="0%" left="0%" right="100%" />
+		</Separator>
+
+		<Label text="Double-click to select a previous class name:">
+			<layout-data top=":prev" left="0%" right="100%" />
+		</Label>
+
+		<StringList>
+			<layout-data height="8em" top=":prev" left="0%" right="100%" bottom="100%" />
+			<model type="items" id="items" />
+			<model type="string-default-action" id="name" />
+		</StringList>
+
+	</Composite>	
+
+</Shell>

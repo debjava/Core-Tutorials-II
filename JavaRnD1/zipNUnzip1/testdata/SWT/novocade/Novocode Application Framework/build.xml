@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project default="doc">
+
+	<description>Novocode Application Framework</description>
+
+	<!-- Locations -->
+	<property name="src"          location="src" />
+	<property name="apidoc"       location="doc/api" />
+
+	<target name="doc" depends="doc-clean" description="Create API documentation" >
+		<javadoc
+			access="public"
+			author="true"
+			classpath="."
+			destdir="${apidoc}"
+			doctitle="Novocode Application Framework"
+			locale="en_US"
+			nodeprecated="false"
+			nodeprecatedlist="false"
+			noindex="false"
+			nonavbar="false"
+			notree="false"
+			packagenames="com.novocode.naf.*"
+			sourcepath="${src}"
+			splitindex="true"
+			use="true"
+			version="true"
+			windowtitle="Novocode Application Framework" />
+	  </target>
+
+	  <target name="doc-clean" description="Delete created API documentation" >
+	    <delete dir="${apidoc}" />
+	  </target>
+
+</project>
